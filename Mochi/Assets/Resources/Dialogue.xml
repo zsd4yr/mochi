@@ -18,65 +18,64 @@
   </Encounter>
 
     <Encounter Tag="SCENE_1">
-        <Dialogue Speaker="Ritsu">“Woah… this place is huge.  Let’s start searching here.  My great-granddad’s schematics could be anywhere. Hey, MOCHI!  Come in!”</Dialogue>
-        <Dialogue Speaker="Mochi">“Ok!  Mobile OP Compact Hologram Initiator is ready to help!”</Dialogue>
-        <Dialogue Speaker="Ritsu">“Just call yourself MOCHI, it’s easier.”</Dialogue>
-        <Dialogue Speaker="Mochi">“Ok!  MOCHI is ready to help, Operator.”</Dialogue>
-        <Dialogue Speaker="Ritsu">“And, my name is Ritsu. Just call me Ritsu.”</Dialogue>
-        <Dialogue Speaker="Mochi">“Ok!   Mobile OP Compact Hologram Initiator is ready to help, Operator!”</Dialogue>
-        <Dialogue Speaker="Ritsu">“I guess we’ll work on that later…”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œWoahâ€¦ this place is huge.  Letâ€™s start searching here.  My great-granddadâ€™s schematics could be anywhere. Hey, MOCHI!  Come in!â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOk!  Mobile OP Compact Hologram Initiator is ready to help!â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œJust call yourself MOCHI, itâ€™s easier.â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOk!  MOCHI is ready to help, Operator.â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œAnd, my name is Ritsu. Just call me Ritsu.â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOk!   Mobile OP Compact Hologram Initiator is ready to help, Operator!â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œI guess weâ€™ll work on that laterâ€¦â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="SCENE_1_BARK1">
-        <Dialogue Speaker="Ritsu">“Wow, it’s so… green in here.”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œWow, itâ€™s soâ€¦ green in here.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="SCENE_1_BARK2">
-        <Dialogue Speaker="Ritsu">“My dad said that my great-grandad used to work here.  I wonder what that was like.”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œMy dad said that my great-grandad used to work here.  I wonder what that was like.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="SCENE_1_BARK3">
-        <Dialogue Speaker="Mochi">“Please watch your step, Operator.”
-</Dialogue>
+        <Dialogue Speaker="Mochi">â€œPlease watch your step, Operator.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="SCENE_1_BARK4">
-        <Dialogue Speaker="Mochi">“Ok!  Self diagnostic complete, all systems green.”</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOk!  Self diagnostic complete, all systems green.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_1">
-        <Dialogue Speaker="Ritsu">““Turn on your Wifi, MOCHI.  Connect to this terminal and download updates.””</Dialogue>
-        <Dialogue Speaker="Mochi">“Acknowledged, Operator.”</Dialogue>
-        <Dialogue Speaker="Ritsu">““Maybe my name is too much for you.  The guys at robotics school call me Ritz.  How about you call me Ritz?””</Dialogue>
-        <Dialogue Speaker="Mochi">“Ok!  Updating Operator designation...  I like that name!”</Dialogue>
-        <Dialogue Speaker="Ritsu">““Oh, that was easier than I thought.””</Dialogue>
-        <Dialogue Speaker="Mochi">“Update is complete, Operator!”</Dialogue>
-        <Dialogue Speaker="Ritsu">““Aw, not again…””</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œâ€œTurn on your Wifi, MOCHI.  Connect to this terminal and download updates.â€â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œAcknowledged, Operator.â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œâ€œMaybe my name is too much for you.  The guys at robotics school call me Ritz.  How about you call me Ritz?â€â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOk!  Updating Operator designation...  I like that name!â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œâ€œOh, that was easier than I thought.â€â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œUpdate is complete, Operator!â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œâ€œAw, not againâ€¦â€â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_1_BARK1">
-        <Dialogue Speaker="Ritsu">“I guess nature kind of took over this place.”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œI guess nature kind of took over this place.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_1_BARK2">
-        <Dialogue Speaker="Ritsu">“Dad said this place was built in 2020s.  But this tech is right out of 2070.  What was great-grandad working on?”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œDad said this place was built in 2020s.  But this tech is right out of 2070.  What was great-grandad working on?â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_1_BARK3">
-        <Dialogue Speaker="Mochi">“Mobile OP Compact Hologram Initiator knows your dad.  He’s really nice!”</Dialogue>
+        <Dialogue Speaker="Mochi">â€œMobile OP Compact Hologram Initiator knows your dad.  Heâ€™s really nice!â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_1_BARK4">
-        <Dialogue Speaker="Mochi">“Mobile OP Compact Hologram Initiator agrees, this place seems really old.”</Dialogue>
+        <Dialogue Speaker="Mochi">â€œMobile OP Compact Hologram Initiator agrees, this place seems really old.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_2">
-        <Dialogue Speaker="Mochi">“Mobile OP Compact Hologram Initiator agrees, this place seems really old.”</Dialogue>
-        <Dialogue Speaker="Ritsu">“Here’s another terminal.  Connect to this and download updates, MOCHI.”</Dialogue>
-        <Dialogue Speaker="Mochi">“Ok!  Acknowledged, Operator.”</Dialogue>
-        <Dialogue Speaker="Ritsu">“I don’t know if you remember this, but I built you using one of my great-grandad’s schematics.  You’re more advanced than any robot I’ve seen at robotics school.  And my great-grand wrote your schematics like… a bajillion years ago.”</Dialogue>
-        <Dialogue Speaker="Mochi">“Updating… updating...”</Dialogue>
-        <Dialogue Speaker="Ritsu">“XXX”</Dialogue>
+        <Dialogue Speaker="Mochi">â€œMobile OP Compact Hologram Initiator agrees, this place seems really old.â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œHereâ€™s another terminal.  Connect to this and download updates, MOCHI.â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOk!  Acknowledged, Operator.â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œI donâ€™t know if you remember this, but I built you using one of my great-grandadâ€™s schematics.  Youâ€™re more advanced than any robot Iâ€™ve seen at robotics school.  And my great-grand wrote your schematics likeâ€¦ a bajillion years ago.â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œUpdatingâ€¦ updating...â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œXXXâ€</Dialogue>
         <Dialogue Speaker="Mochi">"XXX"</Dialogue>
     </Encounter>
 
@@ -89,81 +88,67 @@
     </Encounter>
 
     <Encounter Tag="TERMINAL_HALFWAY">
-        <Dialogue Speaker="Mochi">“Mobile OP Compact Hologram Initiator agrees, this place seems really old.”</Dialogue>
-        <Dialogue Speaker="Ritsu">““Here’s another terminal.  Connect to this and download updates, MOCHI.””</Dialogue>
-        <Dialogue Speaker="Mochi">“Ok!  Acknowledged, Operator.”</Dialogue>
-        <Dialogue Speaker="Ritsu">“I don’t know if you remember this, but I built you using one of my great-grandad’s schematics.  You’re more advanced than any robot I’ve seen at robotics school.  And my great-grand wrote your schematics like… a bajillion years ago.”</Dialogue>
-        <Dialogue Speaker="Mochi">“Updating… updating...”</Dialogue>
-        <Dialogue Speaker="Ritsu">“XXX”</Dialogue>
+        <Dialogue Speaker="Mochi">â€œMobile OP Compact Hologram Initiator agrees, this place seems really old.â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œâ€œHereâ€™s another terminal.  Connect to this and download updates, MOCHI.â€â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOk!  Acknowledged, Operator.â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œI donâ€™t know if you remember this, but I built you using one of my great-grandadâ€™s schematics.  Youâ€™re more advanced than any robot Iâ€™ve seen at robotics school.  And my great-grand wrote your schematics likeâ€¦ a bajillion years ago.â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œUpdatingâ€¦ updating...â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œXXXâ€</Dialogue>
         <Dialogue Speaker="Mochi">XXX</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_HALFWAY_BARK1">
-        <Dialogue Speaker="Mochi">*...ksszzzzzzz…*</Dialogue>
+        <Dialogue Speaker="Mochi">*...ksszzzzzzzâ€¦*</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_HALFWAY_BARK2">
-        <Dialogue Speaker="Mochi">"...still th-th-th-there?...”</Dialogue>
+        <Dialogue Speaker="Mochi">"...still th-th-th-there?...â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_HALFWAY_BARK3">
-        <Dialogue Speaker="Ritsu">“You’re gonna be ok buddy.”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œYouâ€™re gonna be ok buddy.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_HALFWAY_BARK4">
-        <Dialogue Speaker="Ritsu">“You’re gonna be ok buddy.”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œYouâ€™re gonna be ok buddy.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_ALMOSTEND">
-        <Dialogue Speaker="Mochi">“...kszzzz...up-up-updating…”</Dialogue>
-        <Dialogue Speaker="Ritsu">“Can you hear me, MOCHI?””</Dialogue>
-        <Dialogue Speaker="Mochi">“...processing… processing…”</Dialogue>
-        <Dialogue Speaker="Ritsu">“Come on… you can’t leave me alone here.  Please come back.”</Dialogue>
-        <Dialogue Speaker="Mochi">“Ooooook!  Update complete!  Good morning!”</Dialogue>
-        <Dialogue Speaker="Ritsu">“MOCHI!  You’re back!”</Dialogue>
-        <Dialogue Speaker="Mochi">“Did MOCHI miss something?  Where are we?”</Dialogue>
-        <Dialogue Speaker="Ritsu">“We’re deeper in the factory.  Everything’s ok now.  Don’t worry about it.”</Dialogue>
-        <Dialogue Speaker="Mochi">“Ok!  Not worrying about it, Ritz!”</Dialogue>
-        <Dialogue Speaker="Ritsu">“Wait, wait, you remembered my name!”</Dialogue>
-        <Dialogue Speaker="Mochi">“The latest stable update includes optional designations for my Operator.  Operator is now designated as Ritsu and Ritz.”</Dialogue>
-        <Dialogue Speaker="Ritsu">“That’s an optional feature?  How did it get activated?”</Dialogue>
-        <Dialogue Speaker="Mochi">“MOCHI tried extra hard to remember your designation request!”</Dialogue>
-        <Dialogue Speaker="Ritsu">“You tried... extra hard?  Is that a feature too?”</Dialogue>
-        <Dialogue Speaker="Mochi">“MOCHI has no idea!”</Dialogue>
+        <Dialogue Speaker="Mochi">â€œ...kszzzz...up-up-updatingâ€¦â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œCan you hear me, MOCHI?â€â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œ...processingâ€¦ processingâ€¦â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œCome onâ€¦ you canâ€™t leave me alone here.  Please come back.â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOoooook!  Update complete!  Good morning!â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œMOCHI!  Youâ€™re back!â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œDid MOCHI miss something?  Where are we?â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œWeâ€™re deeper in the factory.  Everythingâ€™s ok now.  Donâ€™t worry about it.â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œOk!  Not worrying about it, Ritz!â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œWait, wait, you remembered my name!â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œThe latest stable update includes optional designations for my Operator.  Operator is now designated as Ritsu and Ritz.â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œThatâ€™s an optional feature?  How did it get activated?â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œMOCHI tried extra hard to remember your designation request!â€</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œYou tried... extra hard?  Is that a feature too?â€</Dialogue>
+        <Dialogue Speaker="Mochi">â€œMOCHI has no idea!â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_ALMOSTEND_BARK1">
-        <Dialogue Speaker="Ritsu">“This place was really lonely without you, MOCHI.”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œThis place was really lonely without you, MOCHI.â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_ALMOSTEND_BARK2">
-        <Dialogue Speaker="MOCHI">“MOCHI is glad to be back, Ritz!”</Dialogue>
+        <Dialogue Speaker="MOCHI">â€œMOCHI is glad to be back, Ritz!â€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_LAST">
         <Dialogue Speaker="Mochi">"XXX"</Dialogue>
-        <Dialogue Speaker="Ritsu">“XXX”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œXXXâ€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_LAST_BARK1">
-        <Dialogue Speaker="Ritsu">“XXX”</Dialogue>
+        <Dialogue Speaker="Ritsu">â€œXXXâ€</Dialogue>
     </Encounter>
 
     <Encounter Tag="TERMINAL_LAST_BARK2">
-        <Dialogue Speaker="Mochi">“XXX”</Dialogue>
+        <Dialogue Speaker="Mochi">â€œXXXâ€</Dialogue>
     </Encounter>
 </Encounters>
-
-
-
-
-    <Encounter Tag="TERMINAL_XXX">
-        <Dialogue Speaker="XXX">XXX</Dialogue>
-    </Encounter>
-
-        <Dialogue Speaker="Mochi">XXX</Dialogue>
-        <Dialogue Speaker="Ritsu">“XXX”</Dialogue>
-
-    <Encounter Tag="BARK1">
-        <Dialogue Speaker="Ritsu">“XXX”</Dialogue>
-    </Encounter>

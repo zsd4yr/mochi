@@ -40,12 +40,7 @@ public class Interactable : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
         {
-            robot.GetComponent<RobotController>().positions = new Queue<Vector3>();
-            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(-4.5f, -13.4f, 5.9f));
-            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(3.5f, -13.4f, -0.2f));
-            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(-8.0f, -13.4f, -7.7f));
-            robot.GetComponent<RobotController>().hasRobocommand = robot.GetComponent<RobotController>().ExecuteQueue();
-            
+
         }
     }
 }
