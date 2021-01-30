@@ -105,7 +105,7 @@ public class @GameControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""9b6c311d-4420-440c-831d-7d3f607ac984"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
