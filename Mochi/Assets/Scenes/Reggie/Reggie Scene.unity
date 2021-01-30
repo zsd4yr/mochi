@@ -188,6 +188,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraController
       objectReference: {fileID: 0}
+    - target: {fileID: 473965393452328229, guid: 4e46540b764784f43b1dd4dbace485de,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -305
+      objectReference: {fileID: 0}
+    - target: {fileID: 473965393452328229, guid: 4e46540b764784f43b1dd4dbace485de,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 177
+      objectReference: {fileID: 0}
+    - target: {fileID: 473965394296484746, guid: 4e46540b764784f43b1dd4dbace485de,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 518
+      objectReference: {fileID: 0}
+    - target: {fileID: 473965394296484746, guid: 4e46540b764784f43b1dd4dbace485de,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 538
+      objectReference: {fileID: 0}
+    - target: {fileID: 473965394296484746, guid: 4e46540b764784f43b1dd4dbace485de,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e46540b764784f43b1dd4dbace485de, type: 3}
 --- !u!20 &421990698 stripped
@@ -395,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234656890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 644, y: -328, z: 822}
+  m_LocalPosition: {x: 644, y: -620, z: 822}
   m_LocalScale: {x: 2000, y: 1, z: 2000}
   m_Children: []
   m_Father: {fileID: 0}
