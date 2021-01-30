@@ -36,19 +36,10 @@ public class Interactable : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
         {
-
-            //Vector3 screenPoint = cam.WorldToScreenPoint(transform.position);
-            //Vector3 worldPoint = cam.ScreenToWorldPoint(new Vector3(0.9f, 0.0f, -0.5f));
-
-
-            //robot.GetComponent<RobotController>().positions = new Queue<RoboCommandMovement>(); 
-            //robot.GetComponent<RobotController>().positions.Enqueue(new RoboCommandMovement(cam.ScreenToWorldPoint(new Vector3(0.9f, 0.0f, -0.5f)), new Vector3(0.9f, 0.0f, -0.5f)));
-            //robot.GetComponent<RobotController>().positions.Enqueue(new RoboCommandMovement(cam.ScreenToWorldPoint(new Vector3(-0.1f, 0.0f, -1.0f)), new Vector3(-0.1f, 0.0f, -1.0f)));
-            //robot.GetComponent<RobotController>().positions.Enqueue(new RoboCommandMovement(cam.ScreenToWorldPoint(new Vector3(-0.7f, 0.0f, -0.7f)), new Vector3(-0.7f, 0.0f, -0.7f)));
             robot.GetComponent<RobotController>().positions = new Queue<Vector3>();
-            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(0.5f, -0.1f, -6.1f));
-            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(-3.4f, -0.1f, -6.5f));
-            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(0.5f, -0.1f, -6.1f));
+            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(-4.5f, -13.4f, 5.9f));
+            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(3.5f, -13.4f, -0.2f));
+            robot.GetComponent<RobotController>().positions.Enqueue(new Vector3(-8.0f, -13.4f, -7.7f));
             robot.GetComponent<RobotController>().hasRobocommand = robot.GetComponent<RobotController>().ExecuteQueue();
             
         }
