@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Interactable : MonoBehaviour
 {
+    public GameObject robot;
     bool isWithinBounds = false;
     private void OnDrawGizmosSelected()
     {
@@ -34,7 +35,7 @@ public class Interactable : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
         {
-            var t = 0;
+            robot.GetComponent<RobotController>().ExecuteQueue();
         }
     }
 }
