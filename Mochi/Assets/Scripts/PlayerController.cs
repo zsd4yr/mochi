@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,8 +23,7 @@ public class PlayerController : MonoBehaviour
         controls.Disable();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         controls.GameController.Movement.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.GameController.Movement.canceled += ctx => move = Vector2.zero;
