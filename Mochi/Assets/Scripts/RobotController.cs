@@ -4,22 +4,26 @@ using System.Linq;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class RobotController : MonoBehaviour
 {
     public static string RobotTag => "Robot";
 
-    public Camera cam;
-    public NavMeshAgent agent;
+    public int DirectionMagnitude;
+
+    [ReadOnly]
+    public NavMeshAgent Agent;
 
     [ReadOnly]
     [SerializeField]
-    private Queue<IRobotCommand> Commands;
+    public Queue<IRobotCommand> Commands;
 
     void Start()
     {
         this.Commands = new Queue<IRobotCommand>();
+        this.Agent = this.gameObject.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -27,19 +31,26 @@ public class RobotController : MonoBehaviour
     {
         if(Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Vector3 mouseDown  = new Vector3();
-            mouseDown.x = Mouse.current.position.x.ReadValue();
-            mouseDown.y = Mouse.current.position.y.ReadValue();
-            Ray ray = CameraController.Instance().GetCurrentCamera().ScreenPointToRay(mouseDown);
-            RaycastHit hit;
-
-            if(Physics.Raycast(ray, out hit))
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                var moveCommand = new RobotMoveCommand(hit.point, mouseDown);
-                this.EnqueueCommand(moveCommand);
+                Vector3 mouseDown = new Vector3
+                {
+                    x = Mouse.current.position.x.ReadValue(),
+                    y = Mouse.current.position.y.ReadValue()
+                };
+                Ray ray = CameraController.Instance().GetCurrentCamera().ScreenPointToRay(mouseDown);
+
+                if (Physics.Raycast(ray, out RaycastHit hit))
+                {
+                    var moveCommand = new RobotMoveAbsoluteCommand(hit.point, mouseDown);
+                    this.EnqueueCommand(moveCommand);
+                }
             }
         }        
     }
+
+    public IRobotCommand PeekLastCommand()
+        => this.Commands.Last();
 
     public void EnqueueCommand(IRobotCommand command)
         => this.Commands.Enqueue(command);
@@ -57,18 +68,59 @@ public class RobotController : MonoBehaviour
                 case RobotActionCommand robotActionCommand:
                     yield return null;
                     break;
-                case RobotMoveCommand robotMoveCommand:
-                    if (IsAtDestination(agent.transform.position, robotMoveCommand.WorldPosition))
+                case RobotMoveAbsoluteCommand robotMoveAbsoluteCommand:
+                    if (IsAtDestination(Agent.transform.position, robotMoveAbsoluteCommand.WorldPositionWithinNavMesh))
                     {
                         this.Commands.Dequeue();
                     }
                     else
                     {
-                        if (agent.destination != robotMoveCommand.WorldPosition)
+                        var previousDestination = this.Agent.destination;
+
+                        if (robotMoveAbsoluteCommand.IsWorldPositionWithinNavMeshSet())
                         {
-                            agent.SetDestination(robotMoveCommand.WorldPosition);
-                            Debug.Log($"Setting new Robot destination to {robotMoveCommand.WorldPosition}");
+                            this.Agent.SetDestination(robotMoveAbsoluteCommand.WorldPositionWithinNavMesh);
                         }
+                        else
+                        {
+                            this.Agent.SetDestination(robotMoveAbsoluteCommand.WorldPosition);
+                            robotMoveAbsoluteCommand.SetWorldPositionWithinNavMesh(this.Agent.destination);
+                        }
+                        
+                        if (this.Agent.destination != previousDestination)
+                        {
+                            Debug.Log($"Setting new Robot destination to {robotMoveAbsoluteCommand.WorldPositionWithinNavMesh}");
+                        }
+
+                        yield return null;
+                    }
+                    break;
+                case RobotMoveCommand robotMoveCommand:
+                    if (IsAtDestination(Agent.transform.position, robotMoveCommand.WorldPositionWithinNavMesh))
+                    {
+                        this.Commands.Dequeue();
+                    }
+                    else
+                    {
+                        var previousDestination = this.Agent.destination;
+
+                        if (robotMoveCommand.IsWorldPositionWithinNavMeshSet())
+                        {
+                            this.Agent.SetDestination(robotMoveCommand.WorldPositionWithinNavMesh);
+                        }
+                        else
+                        {
+                            // modify the desired movement vector by the current position
+                            var robotMoveTarget = robotMoveCommand.WorldPosition + this.gameObject.transform.position;
+                            this.Agent.SetDestination(robotMoveTarget);
+                            robotMoveCommand.SetWorldPositionWithinNavMesh(this.Agent.destination);
+                        }
+
+                        if (this.Agent.destination != previousDestination)
+                        {
+                            Debug.Log($"Setting new Robot destination to {robotMoveCommand.WorldPositionWithinNavMesh}");
+                        }
+
                         yield return null;
                     }
                     break;
@@ -85,9 +137,7 @@ public class RobotController : MonoBehaviour
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 }

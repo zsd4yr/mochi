@@ -36,29 +36,32 @@ public class RobotInputScreenController : MonoBehaviour
     }
 
     public void OnDownButtonClicked()
-        => OnDirectionButtonClicked(Vector3.down, "Down");
+        => OnDirectionButtonClicked(Vector3.back, "Down");
 
     public void OnLeftButtonClicked()
         => OnDirectionButtonClicked(Vector3.left, "Left");
 
     public void OnRightButtonClicked()
-        => OnDirectionButtonClicked(Vector3.forward, "Right");
+        => OnDirectionButtonClicked(Vector3.right, "Right");
 
     public void OnUpButtonClicked()
-        => OnDirectionButtonClicked(Vector3.up, "Up");
+        => OnDirectionButtonClicked(Vector3.forward, "Up");
 
     public void OnExecuteButtonClicked()
     {
         this.RobotController.OnExecuteQueue();
+
+        this.FeedbackLines = new List<string>();
+        this.InputFeedbackDisplay.text = "Executing\nCommands...";
     }
 
     private void OnDirectionButtonClicked(Vector3 direction, string newText)
     {
-        var newPosition = this.Robot.transform.position + direction;
+        var newPosition = direction * this.RobotController.DirectionMagnitude;
 
-        UpdateFeedbackText(newText);
+        this.UpdateFeedbackText(newText);
 
-        this.RobotController.EnqueueCommand(new RobotMoveCommand(newPosition, Vector3.zero));
+        this.RobotController.EnqueueCommand(new RobotMoveCommand(newPosition));
     }
 
     private void UpdateFeedbackText(string newText)

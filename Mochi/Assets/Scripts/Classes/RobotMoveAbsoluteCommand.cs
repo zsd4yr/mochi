@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class RobotMoveCommand : IRobotCommand
+public class RobotMoveAbsoluteCommand : IRobotCommand
 {
     public Vector3 WorldPosition { get; private set; }
+    public Vector3 ScreenPosition { get; private set; }
 
     public Vector3 WorldPositionWithinNavMesh { get; private set; }
     private static Vector3 SentinelUnsetVector = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
 
-    public RobotMoveCommand(Vector3 world)
+    public RobotMoveAbsoluteCommand(Vector3 world, Vector3 screen)
     {
         var rectifiedWorldVector = new Vector3(world.x, 0, world.z);
         WorldPosition = rectifiedWorldVector;
+        ScreenPosition = screen;
+
         this.WorldPositionWithinNavMesh = SentinelUnsetVector;
     }
 

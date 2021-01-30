@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Keyboard.current.digit1Key.wasReleasedThisFrame)
+        {
+            this.RobotInputScreen.enabled = !this.RobotInputScreen.enabled;
+        }
     }
 }
