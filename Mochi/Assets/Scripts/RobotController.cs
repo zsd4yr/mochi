@@ -4,49 +4,18 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
-public class RobotController : MonoBehaviour, GameControls.IGameControllerActions
+public class RobotController : MonoBehaviour
 {
     public Camera cam;
     public NavMeshAgent agent;
     bool isMousePressed = false;
-    Vector3 mouseDown;
-    GameControls controls;
-
-    public void OnMovement(InputAction.CallbackContext context)
-    {
-
-    }
-
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        //Vector2 input = context.ReadValue<Vector2>();
-        mouseDown.x = Mouse.current.position.x.ReadValue();
-        mouseDown.y = Mouse.current.position.y.ReadValue();
-        //mouseDown.x = input.x;
-        //mouseDown.z = input.y;
-
-        isMousePressed = true;
-    }
-
-    void OnEnable()
-    {
-        controls = new GameControls();
-        controls.GameController.SetCallbacks(this);
-        controls.Enable();
-    }
-
-    void OnDisable()
-    {
-        controls.Disable();
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if(isMousePressed)
+        if(Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Ray ray = cam.ScreenPointToRay(mouseDown);
+            Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadDefaultValue());
             RaycastHit hit;
 
             if(Physics.Raycast(ray, out hit))
