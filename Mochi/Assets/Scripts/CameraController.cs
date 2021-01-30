@@ -37,9 +37,9 @@ public class CameraController : MonoBehaviour
 
     private static void SwitchViewsFrom(Camera toTurnOff, Camera toTurnOn)
     {
-        Debug.Assert(toTurnOff == null, $"Camera {nameof(toTurnOff)} cannot be null");
-        Debug.Assert(toTurnOn == null, $"Camera {nameof(toTurnOn)} cannot be null");
-        Debug.Assert(toTurnOff.Equals(toTurnOn) || toTurnOff == toTurnOn, $"Cameras to toggle must differ. Given both as {toTurnOn?.name ?? toTurnOn.ToString()}");
+        Debug.Assert(toTurnOff != null, $"Camera {nameof(toTurnOff)} cannot be null");
+        Debug.Assert(toTurnOn != null, $"Camera {nameof(toTurnOn)} cannot be null");
+        Debug.Assert(!toTurnOff.Equals(toTurnOn) && toTurnOff != toTurnOn, $"Cameras to toggle must differ. Given both as {toTurnOn?.name ?? toTurnOn.ToString()}");
 
         toTurnOff.enabled = false;
         toTurnOn.enabled = true;

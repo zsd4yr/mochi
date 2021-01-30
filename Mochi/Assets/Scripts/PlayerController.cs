@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public Camera cam;
     Rigidbody rb;
     GameControls controls;
     public float Accellaration = 100f;
@@ -23,6 +25,11 @@ public class PlayerController : MonoBehaviour
         controls.Disable();
     }
 
+    private void Update()
+    {
+  
+    }
+
     void FixedUpdate()
     {
         controls.GameController.Movement.performed += ctx => move = ctx.ReadValue<Vector2>();
@@ -30,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(move.x, 0, move.y);
         rb.AddForce(movement * Accellaration);
+
     }
 
 }
