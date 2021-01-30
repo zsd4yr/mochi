@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class RobotController : MonoBehaviour
 {
+    public static string RobotTag => "Robot";
+
     public Camera cam;
     public NavMeshAgent agent;
     public bool hasRobocommand = false;

@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Interactable : MonoBehaviour
 {
     //public Camera cam;
+    [ReadOnly]
     public GameObject robot;
-    bool isWithinBounds = false;
+
+    [ReadOnly]
+    public bool isWithinBounds = false;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -28,7 +33,7 @@ public class Interactable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.robot = GameObject.FindGameObjectWithTag(RobotController.RobotTag);
     }
 
     // Update is called once per frame

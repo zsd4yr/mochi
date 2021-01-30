@@ -7,17 +7,25 @@ using UnityEngine.InputSystem;
 public class RespawnManager : MonoBehaviour
 {
     [ReadOnly]
-    public List<RespawnPlatform> RespawnPlatforms;
+    public List<GameObject> RespawnPlatforms;
 
     [ReadOnly]
-    public RespawnPlatform CurrentRespawnPlatform;
+    public GameObject CurrentRespawnPlatform;
 
     void Start()
     {
-        this.RespawnPlatforms = new List<RespawnPlatform>();
-        this.RespawnPlatforms.AddRange(GameObject.FindGameObjectsWithTag(RespawnPlatform.RespawnPlatformTag)
-            .ToList()
-            .Select(each => each.GetComponent<RespawnPlatform>()));
+        this.RespawnPlatforms = new List<GameObject>();
+
+        var startingRespawnPlatform = GameObject.FindGameObjectWithTag(RespawnPlatform.StartingRespawnPlatformTag);
+
+        var respawnPlatforms = GameObject.FindGameObjectsWithTag(RespawnPlatform.RespawnPlatformTag);
+
+        this.RespawnPlatforms.Add(startingRespawnPlatform);
+
+        this.RespawnPlatforms.AddRange(respawnPlatforms
+            .Where(each => each.TryGetComponent<RespawnPlatform>(out _)));
+
+        this.SwitchCurrentPlatformTo(startingRespawnPlatform);
     }
 
     void Update()
@@ -31,5 +39,10 @@ public class RespawnManager : MonoBehaviour
     private void RespawnRobot()
     {
 
+    }
+
+    public void SwitchCurrentPlatformTo(GameObject newCurrentPlat)
+    {
+        this.CurrentRespawnPlatform = newCurrentPlat;
     }
 }
