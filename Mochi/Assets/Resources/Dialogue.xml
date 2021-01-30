@@ -14,4 +14,13 @@
     <Dialogue Speaker="Ritsu">Hello, Mochi! You don't have to call me operator</Dialogue>
     <Dialogue Speaker="Ritsu">Where am I?</Dialogue>
   </Encounter>
+    <Encounter Tag="SCENE_1">
+        <Dialogue Speaker="Ritsu">“Woah… this place is huge.  Let’s start searching here.  My great-granddad’s schematics could be anywhere. Hey, MOCHI!  Come in!”</Dialogue>
+        <Dialogue Speaker="Mochi">“Ok!  Mobile OP Compact Hologram Initiator is ready to help!”</Dialogue>
+        <Dialogue Speaker="Ritsu">“Just call yourself MOCHI, it’s easier.”</Dialogue>
+        <Dialogue Speaker="Mochi">“Ok!  MOCHI is ready to help, Operator.”</Dialogue>
+        <Dialogue Speaker="Ritsu">“And, my name is Ritsu. Just call me Ritsu.”</Dialogue>
+        <Dialogue Speaker="Mochi">“Ok!   Mobile OP Compact Hologram Initiator is ready to help, Operator!”</Dialogue>
+        <Dialogue Speaker="Ritsu">“I guess we’ll work on that later…”</Dialogue>
+    </Encounter>
 </Encounters>
