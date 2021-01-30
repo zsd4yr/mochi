@@ -5,9 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< HEAD
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 959bdef6e04097f438e61ec03562c6bc,
       type: 2}
+=======
+  - enabled: 1
+    path: Assets/Scenes/Zach/Zach_Camera_Scene.unity
+    guid: 4bf0a15083218f9448d1b43e78cc22fd
+  m_configObjects: {}
+>>>>>>> 8d43b0b40739ffb78be49d3d8549a61c6fae47b7

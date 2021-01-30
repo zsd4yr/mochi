@@ -1,13 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class RobotController : MonoBehaviour
 {
+    public static string RobotTag => "Robot";
+
     public Camera cam;
     public NavMeshAgent agent;
+    public bool hasRobocommand = false;
+    Vector3 commandDestination; 
+    public Queue<Vector3> positions;
 
     // Update is called once per frame
     void Update()
@@ -17,7 +21,7 @@ public class RobotController : MonoBehaviour
             Vector3 mouseDown  = new Vector3();
             mouseDown.x = Mouse.current.position.x.ReadValue();
             mouseDown.y = Mouse.current.position.y.ReadValue();
-            Ray ray = cam.ScreenPointToRay(mouseDown);
+            Ray ray = CameraController.Instance().GetCurrentCamera().ScreenPointToRay(mouseDown);
             RaycastHit hit;
 
             if(Physics.Raycast(ray, out hit))
@@ -25,21 +29,46 @@ public class RobotController : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
+
+        if (hasRobocommand)
+        {
+            if (commandDestination != null)
+            {
+                agent.SetDestination(commandDestination);
+            }
+
+
+            //TODO If the agent cannot get to the destination then the list of robocommand won't be cycled through
+            if(IsAtDestination(agent.transform.position, commandDestination))
+            {
+                hasRobocommand = ExecuteQueue();
+            }
+        }
         
     }
 
-    public void ExecuteQueue()
+    static bool IsAtDestination(Vector3 myPosition, Vector3 destination)
     {
-        Queue<Vector3> positions = new Queue<Vector3>();
-        positions.Enqueue(new Vector3(-0.1f, 0.0f, -1.0f));
-        positions.Enqueue(new Vector3(0.9f, 0.0f, -0.5f));
-        positions.Enqueue(new Vector3(-0.7f, 0.0f, -0.7f));
+        if (Mathf.Approximately(myPosition.x, destination.x) && Mathf.Approximately(myPosition.z, destination.z))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool ExecuteQueue()
+    {
+        bool returnResult = false;
         int x = positions.Count;
-        for (int i=0; i< x; i++)
-        { 
-            agent.SetDestination(positions.Peek());
-            positions.Dequeue();
+        if (positions.Count > 0)
+        {
+            commandDestination = positions.Dequeue();
+            returnResult = true;
         }
 
+        return returnResult;
     }
 }

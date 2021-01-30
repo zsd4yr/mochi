@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public Camera cam;
     Rigidbody rb;
     GameControls controls;
     public float Accellaration = 100f;
