@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Zach/Zach_Camera_Scene.unity
+    guid: 4bf0a15083218f9448d1b43e78cc22fd
   m_configObjects: {}
