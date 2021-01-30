@@ -1,0 +1,17 @@
+<Encounters>
+    <Encounter Tag="Introductions">
+        <Dialogue Speaker="Mochi">Hello Operator, my name is MOCHI</Dialogue>
+        <Dialogue Speaker="Ritsu">Hello, Mochi! You don't have to call me operator</Dialogue>
+        <Dialogue Speaker="Ritsu">Where am I?</Dialogue>
+    </Encounter>
+  <Encounter Tag="Introductions2">
+    <Dialogue Speaker="Mochi">Hello Operator, my name is MOCHI</Dialogue>
+    <Dialogue Speaker="Ritsu">Hello, Mochi! You don't have to call me operator</Dialogue>
+    <Dialogue Speaker="Ritsu">Where am I?</Dialogue>
+  </Encounter>
+  <Encounter Tag="Introductions3">
+    <Dialogue Speaker="Mochi">Hello Operator, my name is MOCHI</Dialogue>
+    <Dialogue Speaker="Ritsu">Hello, Mochi! You don't have to call me operator</Dialogue>
+    <Dialogue Speaker="Ritsu">Where am I?</Dialogue>
+  </Encounter>
+</Encounters>
