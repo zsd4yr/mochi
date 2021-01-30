@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -9,9 +12,15 @@ public class RobotController : MonoBehaviour
 
     public Camera cam;
     public NavMeshAgent agent;
-    public bool hasRobocommand = false;
-    Vector3 commandDestination; 
-    public Queue<Vector3> positions;
+
+    [ReadOnly]
+    [SerializeField]
+    private Queue<IRobotCommand> Commands;
+
+    void Start()
+    {
+        this.Commands = new Queue<IRobotCommand>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,25 +35,48 @@ public class RobotController : MonoBehaviour
 
             if(Physics.Raycast(ray, out hit))
             {
-                agent.SetDestination(hit.point);
+                var moveCommand = new RobotMoveCommand(hit.point, mouseDown);
+                this.EnqueueCommand(moveCommand);
             }
-        }
+        }        
+    }
 
-        if (hasRobocommand)
+    public void EnqueueCommand(IRobotCommand command)
+        => this.Commands.Enqueue(command);
+
+    public void OnExecuteQueue()
+        => StartCoroutine(this.ExecuteQueue());
+
+    IEnumerator ExecuteQueue()
+    {
+        while(this.Commands.Any())
         {
-            if (commandDestination != null)
+            var command = this.Commands.Peek();
+            switch (command)
             {
-                agent.SetDestination(commandDestination);
-            }
-
-
-            //TODO If the agent cannot get to the destination then the list of robocommand won't be cycled through
-            if(IsAtDestination(agent.transform.position, commandDestination))
-            {
-                hasRobocommand = ExecuteQueue();
+                case RobotActionCommand robotActionCommand:
+                    yield return null;
+                    break;
+                case RobotMoveCommand robotMoveCommand:
+                    if (IsAtDestination(agent.transform.position, robotMoveCommand.WorldPosition))
+                    {
+                        this.Commands.Dequeue();
+                    }
+                    else
+                    {
+                        if (agent.destination != robotMoveCommand.WorldPosition)
+                        {
+                            agent.SetDestination(robotMoveCommand.WorldPosition);
+                            Debug.Log($"Setting new Robot destination to {robotMoveCommand.WorldPosition}");
+                        }
+                        yield return null;
+                    }
+                    break;
             }
         }
-        
+        Debug.Log($"Robot's Command Queue is now empty.");
+
+        yield return null;
     }
 
     static bool IsAtDestination(Vector3 myPosition, Vector3 destination)
@@ -57,18 +89,5 @@ public class RobotController : MonoBehaviour
         {
             return false;
         }
-    }
-
-    public bool ExecuteQueue()
-    {
-        bool returnResult = false;
-        int x = positions.Count;
-        if (positions.Count > 0)
-        {
-            commandDestination = positions.Dequeue();
-            returnResult = true;
-        }
-
-        return returnResult;
     }
 }
