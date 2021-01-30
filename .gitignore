@@ -424,3 +424,19 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
+Mochi/Assets/InputSystem.inputsettings.asset
+Mochi/Assets/InputSystem.inputsettings.asset.meta
+Mochi/Assets/Ludiq.Generated.meta
+Mochi/Assets/Ludiq.meta
+Mochi/Assets/Ludiq/
+Mochi/Assets/Ludiq.Generated/
+Mochi/Assets/Materials/Sphere Climbing Material.mat
+Mochi/Assets/Materials/Sphere Climbing Material.mat.meta
+Mochi/Assets/Materials/Sphere Material.mat
+Mochi/Assets/Materials/Sphere Material.mat.meta
+Mochi/Assets/Materials/Sphere Swimming Material.mat
+Mochi/Assets/Materials/Sphere Swimming Material.mat.meta
+Mochi/Assets/Prefabs/Sphere.prefab
+Mochi/Assets/Prefabs/Sphere.prefab.meta
+Mochi/Assets/Scripts/MovingSphere.cs
+Mochi/Assets/Scripts/MovingSphere.cs.meta
