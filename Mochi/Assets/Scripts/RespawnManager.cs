@@ -12,6 +12,9 @@ public class RespawnManager : MonoBehaviour
     [ReadOnly]
     public GameObject CurrentRespawnPlatform;
 
+    [ReadOnly]
+    public GameObject Robot;
+
     void Start()
     {
         this.RespawnPlatforms = new List<GameObject>();
@@ -26,6 +29,10 @@ public class RespawnManager : MonoBehaviour
             .Where(each => each.TryGetComponent<RespawnPlatform>(out _)));
 
         this.SwitchCurrentPlatformTo(startingRespawnPlatform);
+
+        this.Robot = GameObject.FindGameObjectWithTag(RobotController.RobotTag);
+
+        this.RespawnRobot();
     }
 
     void Update()
@@ -38,7 +45,7 @@ public class RespawnManager : MonoBehaviour
 
     private void RespawnRobot()
     {
-
+        Robot.transform.position = CurrentRespawnPlatform.transform.position;
     }
 
     public void SwitchCurrentPlatformTo(GameObject newCurrentPlat)
