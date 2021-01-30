@@ -21,7 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ObjectHighlighter
-  m_Shader: {fileID: 4800000, guid: c3f8b3ff00c2bc249a7b4d0e70ceeb4c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f57ce896e28b4dc4a8890ac0c6e5e5db,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
