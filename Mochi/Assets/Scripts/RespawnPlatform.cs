@@ -4,5 +4,5 @@ using UnityEngine;
 [Serializable]
 public class RespawnPlatform : MonoBehaviour
 {
-    public static string RespawnPlatformTag = "RespawnPlatform";
+    public static string RespawnPlatformTag = "Respawn";
 }

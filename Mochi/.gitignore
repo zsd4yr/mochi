@@ -17,6 +17,9 @@
 **/[Ll]ogs/
 **/[Mm]emoryCaptures/
 
+# Ignore Amplify Editor to not stomp over Ocho's biz
+Assets/AmplifyShaderEditor/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
