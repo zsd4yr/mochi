@@ -39,8 +39,6 @@ class EditorDialogueTagGUIPopup : Editor
         controller.TimeToDisplayEachCharSeconds = EditorGUILayout.FloatField(nameof(controller.TimeToDisplayEachCharSeconds), controller.TimeToDisplayEachCharSeconds);
         controller.TimeToDisplayEachTerminatingCharSeconds = EditorGUILayout.FloatField(nameof(controller.TimeToDisplayEachTerminatingCharSeconds), controller.TimeToDisplayEachTerminatingCharSeconds);
 
-        EditorGUILayout.FloatField(nameof(controller.DefaultTimeToDisplayEachSentenceSeconds), controller.DefaultTimeToDisplayEachSentenceSeconds);
-
         EditorUtility.SetDirty(controller);
     }
 }
