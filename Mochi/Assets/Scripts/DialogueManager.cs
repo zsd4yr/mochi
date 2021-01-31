@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static string DialogueManagerTag = "DialogueManager";
+
     public string ResourcesRelativeDialogueXMLFilePath;
 
     [ShowOnly]

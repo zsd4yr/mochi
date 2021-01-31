@@ -390,6 +390,8 @@ MonoBehaviour:
   InputFeedbackDisplay: {fileID: 4508018136079924484}
   Robot: {fileID: 0}
   RobotController: {fileID: 0}
+  Respawner: {fileID: 0}
+  RespawnManager: {fileID: 0}
   FeedbackLines: []
 --- !u!1 &988685603728217279
 GameObject:
@@ -849,7 +851,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3076992041016687733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1322536573318835445}
+        m_MethodName: OnRespawnButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3585134486430922505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,9 +1234,9 @@ RectTransform:
   m_Father: {fileID: 828481013404566396}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: -282}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 151, y: 52}
   m_SizeDelta: {x: 220, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1555154763480315447
@@ -1435,7 +1448,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5482699703511049343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1322536573318835445}
+        m_MethodName: OnActionButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6486756491933808794
 GameObject:
   m_ObjectHideFlags: 0
