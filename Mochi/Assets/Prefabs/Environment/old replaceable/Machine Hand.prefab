@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6076958284396525111}
   - component: {fileID: 8796630371860813724}
   - component: {fileID: 5319969825288323009}
+  - component: {fileID: 3808449250738803793}
   m_Layer: 0
   m_Name: Machine Hand
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4485899150497377392}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -2.4046206, y: 0, z: 0}
-  m_LocalScale: {x: -5.612401, y: -5.612401, z: -5.612401}
+  m_LocalScale: {x: -9.727282, y: -9.727282, z: -9.727282}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &8796630371860813724
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3808449250738803793
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485899150497377392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8999911773206952699, guid: 86f117974a8b1a84e977e88fd703f20f, type: 3}
