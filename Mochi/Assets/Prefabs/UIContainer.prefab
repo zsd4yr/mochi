@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -402,6 +402,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7296642468778965287}
     m_Modifications:
+    - target: {fileID: 828481013404566393, guid: e6401babd0af7274d96b8bcd3bf1e380,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 828481013404566396, guid: e6401babd0af7274d96b8bcd3bf1e380,
         type: 3}
       propertyPath: m_Pivot.x
@@ -511,6 +516,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RobotInputScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387934147584427435, guid: e6401babd0af7274d96b8bcd3bf1e380,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562541689625441301, guid: e6401babd0af7274d96b8bcd3bf1e380,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 142
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562541689625441301, guid: e6401babd0af7274d96b8bcd3bf1e380,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508018136079924484, guid: e6401babd0af7274d96b8bcd3bf1e380,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6401babd0af7274d96b8bcd3bf1e380, type: 3}
