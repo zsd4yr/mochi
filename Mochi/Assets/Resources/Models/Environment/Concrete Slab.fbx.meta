@@ -1,8 +1,17 @@
 fileFormatVersion: 2
-guid: c1c7a312f67bbe847b70ae89d09e1235
+guid: 416615d9cd9921c4a8e6f3647686bf42
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 486598350059397529
+    second: Armature|Door Open
+  - first:
+      74: 1902368381920797954
+    second: Armature|Door Open.001
+  - first:
+      74: 3253231605712911930
+    second: Plane.003|Door Open.001
   externalObjects: {}
   materials:
     materialImportMode: 1
