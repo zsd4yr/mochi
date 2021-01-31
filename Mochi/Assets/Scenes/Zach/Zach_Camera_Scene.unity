@@ -496,11 +496,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8495390138495074140, guid: cbd9bb56c9e13584589ac1e66c53990d,
-        type: 3}
-      propertyPath: timeToRunFromWalkSeconds
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8495390138495074142, guid: cbd9bb56c9e13584589ac1e66c53990d,
         type: 3}
       propertyPath: m_Name

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 473965393014255744}
   - component: {fileID: 5637405944524701737}
+  - component: {fileID: 357384769}
   m_Layer: 0
   m_Name: CameraController
   m_TagString: Untagged
@@ -47,6 +48,18 @@ MonoBehaviour:
   IsometricCamera: {fileID: 473965393452328228}
   TopDownCamera: {fileID: 473965394296484749}
   CurrentActiveCamera: {fileID: 0}
+--- !u!114 &357384769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473965393014255759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2439fa180d249d247ab7cb23ed9bd99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &473965393080573381
 GameObject:
   m_ObjectHideFlags: 0
