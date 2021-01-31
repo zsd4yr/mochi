@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static string PlayerTag = "Player";
+
     Rigidbody rb;
     GameControls controls;
     public float Accellaration = 100f;

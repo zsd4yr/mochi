@@ -14,7 +14,7 @@ public class GasTriggerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(PlayerController.PlayerTag))
         {
             isWithinBounds = true;
             collider = other;
@@ -24,7 +24,7 @@ public class GasTriggerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(PlayerController.PlayerTag))
         {
             isWithinBounds = false;
             collider = null;
