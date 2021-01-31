@@ -13,6 +13,10 @@ public class DialogueController : MonoBehaviour
 
     public string DialogueTag;
 
+    public float DefaultTimeToDisplayEachSentenceSeconds = 2;
+    public float DefaultTimeToDisplayEachCharSeconds = 0.05f;
+    public float DefaultTimeToDisplayEachTerminatingCharSeconds = 0.2f;
+
     public float TimeToDisplayEachSentenceSeconds;
     public float TimeToDisplayEachCharSeconds;
     public float TimeToDisplayEachTerminatingCharSeconds;
@@ -44,6 +48,21 @@ public class DialogueController : MonoBehaviour
 
         this.DialogueBoxGO = GameObject.FindGameObjectWithTag(DialogueController.DialougeScreenTag);
         this.DialogueBox = DialogueBoxGO.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        if (this.TimeToDisplayEachSentenceSeconds == 0)
+        {
+            this.TimeToDisplayEachSentenceSeconds = DefaultTimeToDisplayEachSentenceSeconds;
+        }
+
+        if (this.TimeToDisplayEachCharSeconds == 0)
+        {
+            this.TimeToDisplayEachCharSeconds = DefaultTimeToDisplayEachCharSeconds;
+        }
+
+        if (this.TimeToDisplayEachTerminatingCharSeconds == 0)
+        {
+            this.TimeToDisplayEachTerminatingCharSeconds = DefaultTimeToDisplayEachTerminatingCharSeconds;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

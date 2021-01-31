@@ -88,9 +88,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870e9c5818016e24d8e543e45615bcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBox: {fileID: 0}
-  dialogueTag: INTRO_1
-  sentenceDelay: 0.5
-  characterDelay: 0.1
+  DialogueTag: INTRO_BARK2
+  DefaultTimeToDisplayEachSentenceSeconds: 2
+  DefaultTimeToDisplayEachCharSeconds: 0.05
+  DefaultTimeToDisplayEachTerminatingCharSeconds: 0.2
+  TimeToDisplayEachSentenceSeconds: 2
+  TimeToDisplayEachCharSeconds: 0.05
+  TimeToDisplayEachTerminatingCharSeconds: 0.2
   DialogueManagerGO: {fileID: 0}
   DialogueManager: {fileID: 0}
+  DialogueBoxGO: {fileID: 0}
+  DialogueBox: {fileID: 0}

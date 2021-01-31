@@ -724,26 +724,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
-        type: 3}
-      propertyPath: DialogueTag
-      value: INTRO_BARK2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
-        type: 3}
-      propertyPath: TimeToDisplayEachCharSeconds
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
-        type: 3}
-      propertyPath: TimeToDisplayEachSentenceSeconds
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
-        type: 3}
-      propertyPath: TimeToDisplayEachTerminatingCharSeconds
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
 --- !u!1001 &3055745914270980254

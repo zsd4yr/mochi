@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml;
-using Unity.Collections;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
