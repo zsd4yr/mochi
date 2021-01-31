@@ -7,39 +7,39 @@ using FMODUnity;
 public class HazardSFX : MonoBehaviour
 {
     Rigidbody rb;
-    //public string hazardEvent;
-    string parameterName = "Player_Distance";
-    private EventInstance instance;
+    public string hazardEvent;
+    //string parameterName = "Player_Distance";
+    //private EventInstance instance;
 
-    [EventRef]
-    public string fmodEvent;
+    //[EventRef]
+    //public string fmodEvent;
 
-    [SerializeField] [Range(0.00f, 1.00f)]
-    private float distance;
+    //[SerializeField] [Range(0.00f, 1.00f)]
+    //private float distance;
 
-    //EventInstance hazard;
-    //EventDescription hazardDistance;
-    //PARAMETER_DESCRIPTION triggerHazard;
-    //PARAMETER_ID hazardID;
+    EventInstance hazard;
+    EventDescription hazardDistance;
+    PARAMETER_DESCRIPTION triggerHazard;
+    PARAMETER_ID hazardID;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        instance = RuntimeManager.CreateInstance(fmodEvent);
-        instance.start();
+        //instance = RuntimeManager.CreateInstance(fmodEvent);
+        //instance.start();
 
-        //hazard = RuntimeManager.CreateInstance(hazardEvent);
-        //hazardDistance = RuntimeManager.GetEventDescription(hazardEvent);
+        hazard = RuntimeManager.CreateInstance(hazardEvent);
+        hazardDistance = RuntimeManager.GetEventDescription(hazardEvent);
 
-        //hazardEvent.start();
+        hazard.start();
         //hazard.setParameterByName(parameterName, 1.00f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        instance.setParameterByName("Player_Distance", distance);
+        //instance.setParameterByName("Player_Distance", distance);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,11 +48,11 @@ public class HazardSFX : MonoBehaviour
         {
 
             Debug.Log("Inside Hazard");
-            //hazardDistance.getParameterDescriptionByName("Player_Distance", out triggerHazard);
-            //hazardID = triggerHazard.id;
+            hazardDistance.getParameterDescriptionByName("Player_Distance", out triggerHazard);
+            hazardID = triggerHazard.id;
 
             //hazard.setParameterByName(parameterName, 1.00f);
-            //hazard.setParameterByID(hazardID, 1.00f);
+            hazard.setParameterByID(hazardID, 1.00f);
 
         }
     }
@@ -63,7 +63,7 @@ public class HazardSFX : MonoBehaviour
         {
             Debug.Log("Outside Hazard");
             //hazard.setParameterByName(parameterName, 0.00f);
-            //hazard.setParameterByID(hazardID, 0.00f);
+            hazard.setParameterByID(hazardID, 0.00f);
         }
     }
 
