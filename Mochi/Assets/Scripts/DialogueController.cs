@@ -41,6 +41,8 @@ public class DialogueController : MonoBehaviour
         '!'
     };
 
+    public bool isDisplayingDialogue;
+
     void Start()
     {
         this.DialogueManagerGO = GameObject.FindGameObjectWithTag(DialogueManager.DialogueManagerTag);
@@ -63,6 +65,8 @@ public class DialogueController : MonoBehaviour
         {
             this.TimeToDisplayEachTerminatingCharSeconds = DefaultTimeToDisplayEachTerminatingCharSeconds;
         }
+
+        this.isDisplayingDialogue = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -95,6 +99,12 @@ public class DialogueController : MonoBehaviour
 
     IEnumerator DelayedDialogue(DialogueEncounter encounter, float delayPerSnippet)
     {
+        while (this.isDisplayingDialogue)
+        {
+            yield return null;
+        }
+
+        this.isDisplayingDialogue = true;
         float elapsedSpeaker = 0.0f;
         int snippetsDisplayed = 0;
 
@@ -118,6 +128,17 @@ public class DialogueController : MonoBehaviour
                 yield return null;
             }
         }
+
+        // wait one last time
+        elapsedSpeaker = 0.0f;
+        while (elapsedSpeaker >= delayPerSnippet)
+        {
+            yield return null;
+            elapsedSpeaker += Time.deltaTime;
+        }
+
+        this.isDisplayingDialogue = false;
+        this.DialogueBox.text = string.Empty;
     }
 
     IEnumerator DelayedCharacters(DialogueSnippet snippet, float delayPerChar, float delayPerTerminatingChar)
