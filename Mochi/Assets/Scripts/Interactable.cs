@@ -20,6 +20,9 @@ public class Interactable : MonoBehaviour
     [ShowOnly]
     public Material HighlightMaterial;
 
+    [ShowOnly]
+    public Material[] StartingMaterials;
+
     private MeshRenderer MeshRendererComponent;
 
     [ShowOnly]
@@ -64,10 +67,11 @@ public class Interactable : MonoBehaviour
         if (other.gameObject.CompareTag(PlayerController.PlayerTag))
         {
             this.isWithinBounds = true;
-            var mats = this.MeshRendererComponent.materials.ToList();
-            mats.Add(this.HighlightMaterial);
-            this.MeshRendererComponent.materials = mats.ToArray();
 
+            var mats = new List<Material>();
+            mats.Add(this.HighlightMaterial);
+            mats.AddRange(this.StartingMaterials);
+            this.MeshRendererComponent.materials = mats.ToArray();
 
             this.DesiredCurrentTransparency = 0.0f;
             this.DesiredCurrentCircleSize = 0.0f;
@@ -81,10 +85,12 @@ public class Interactable : MonoBehaviour
         if (other.gameObject.CompareTag(PlayerController.PlayerTag))
         {
             this.isWithinBounds = false;
-            var mats = new[] { this.MeshRendererComponent.materials.First() };
-            this.MeshRendererComponent.materials = mats;
+
+            this.MeshRendererComponent.materials = this.StartingMaterials;
             this.RobotInputScreen.enabled = false;
+
             CameraController.Instance().ShowIsometricView();
+
             StartCoroutine(LurePlayerWithinBounds(this.AnimationTime));
         }
     }
@@ -100,6 +106,7 @@ public class Interactable : MonoBehaviour
         this.RobotGO = GameObject.FindGameObjectWithTag(RobotController.RobotTag);
         this.CommandRangeMaterialChildComponent = this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials[0];
         this.HighlightMaterial = Resources.Load(@"Materials/highlightMaterial") as Material;
+        this.StartingMaterials = this.MeshRendererComponent.materials;
         StartCoroutine(LurePlayerWithinBounds(this.AnimationTime));
     }
 
