@@ -80,10 +80,8 @@ public class Interactable : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
         {
-
+            Debug.Log("I have been interacted with!");
         }
-
-
     }
 
     IEnumerator LurePlayerWithinBounds(float animationTime)
@@ -92,7 +90,7 @@ public class Interactable : MonoBehaviour
         {
             this.AnimationProgressTime = 0;
             var halfAnimation = animationTime / 2;
-            while (this.AnimationProgressTime < animationTime)
+            while (this.AnimationProgressTime < animationTime && !this.isWithinBounds)
             {
                 this.AnimationProgressTime += Time.deltaTime;
 

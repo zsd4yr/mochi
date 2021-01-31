@@ -128,6 +128,9 @@ MonoBehaviour:
   robot: {fileID: 0}
   isWithinBounds: 0
   CommandRangeMaterial: {fileID: 0}
+  ShaderTransparencyPropertyName: Vector1_E165039D
+  ShaderColorPropertyName: Color_696C87FA
+  ShaderColorSizePropertyName: Vector1_11CC1B9D
   AnimationTime: 10
   AnimationProgressTime: 0
   AnimationPercentage: 0
@@ -202,7 +205,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CommandRange
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2115033643498824033, guid: eab6161311cf150498e39233b5dc8d0f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eab6161311cf150498e39233b5dc8d0f, type: 3}
 --- !u!4 &5794903833407042293 stripped
 Transform:
