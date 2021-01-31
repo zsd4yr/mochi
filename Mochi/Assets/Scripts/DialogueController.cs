@@ -13,9 +13,9 @@ public class DialogueController : MonoBehaviour
 
     public string DialogueTag;
 
-    public float DefaultTimeToDisplayEachSentenceSeconds = 2;
-    public float DefaultTimeToDisplayEachCharSeconds = 0.05f;
-    public float DefaultTimeToDisplayEachTerminatingCharSeconds = 0.2f;
+    public float DefaultTimeToDisplayEachSentenceSeconds = 1;
+    public float DefaultTimeToDisplayEachCharSeconds = 0.03f;
+    public float DefaultTimeToDisplayEachTerminatingCharSeconds = 0.1f;
 
     public float TimeToDisplayEachSentenceSeconds;
     public float TimeToDisplayEachCharSeconds;
@@ -41,7 +41,11 @@ public class DialogueController : MonoBehaviour
         '!'
     };
 
-    public bool isDisplayingDialogue;
+    [ShowOnly]
+    public static bool isDisplayingDialogue;
+
+    [ShowOnly]
+    public bool hasPlayed;
 
     void Start()
     {
@@ -51,29 +55,32 @@ public class DialogueController : MonoBehaviour
         this.DialogueBoxGO = GameObject.FindGameObjectWithTag(DialogueController.DialougeScreenTag);
         this.DialogueBox = DialogueBoxGO.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
-        if (this.TimeToDisplayEachSentenceSeconds == 0)
+        //if (this.TimeToDisplayEachSentenceSeconds == 0)
         {
             this.TimeToDisplayEachSentenceSeconds = DefaultTimeToDisplayEachSentenceSeconds;
         }
 
-        if (this.TimeToDisplayEachCharSeconds == 0)
+        //if (this.TimeToDisplayEachCharSeconds == 0)
         {
             this.TimeToDisplayEachCharSeconds = DefaultTimeToDisplayEachCharSeconds;
         }
 
-        if (this.TimeToDisplayEachTerminatingCharSeconds == 0)
+        //if (this.TimeToDisplayEachTerminatingCharSeconds == 0)
         {
             this.TimeToDisplayEachTerminatingCharSeconds = DefaultTimeToDisplayEachTerminatingCharSeconds;
         }
 
-        this.isDisplayingDialogue = false;
+        DialogueController.isDisplayingDialogue = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (this.DialogueManager.TagsToEncounters.TryGetValue(this.DialogueTag, out var encounter))
         {
-            StartCoroutine(DelayedDialogue(encounter, TimeToDisplayEachSentenceSeconds));
+            if (!this.hasPlayed)
+            {
+                StartCoroutine(DelayedDialogue(encounter, TimeToDisplayEachSentenceSeconds));
+            }
         }
         else
         {
@@ -86,25 +93,14 @@ public class DialogueController : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            if (this.DialogueManager.TagsToEncounters.TryGetValue(this.DialogueTag, out var encounter))
-            {
-                StartCoroutine(DelayedDialogue(encounter, TimeToDisplayEachSentenceSeconds));
-            }
-        }
-    }
-
     IEnumerator DelayedDialogue(DialogueEncounter encounter, float delayPerSnippet)
     {
-        while (this.isDisplayingDialogue)
+        while (DialogueController.isDisplayingDialogue)
         {
             yield return null;
         }
 
-        this.isDisplayingDialogue = true;
+        DialogueController.isDisplayingDialogue = true;
         float elapsedSpeaker = 0.0f;
         int snippetsDisplayed = 0;
 
@@ -137,8 +133,9 @@ public class DialogueController : MonoBehaviour
             elapsedSpeaker += Time.deltaTime;
         }
 
-        this.isDisplayingDialogue = false;
+        DialogueController.isDisplayingDialogue = false;
         this.DialogueBox.text = string.Empty;
+        this.hasPlayed = true;
     }
 
     IEnumerator DelayedCharacters(DialogueSnippet snippet, float delayPerChar, float delayPerTerminatingChar)
