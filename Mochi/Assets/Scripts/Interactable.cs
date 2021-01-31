@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +16,11 @@ public class Interactable : MonoBehaviour
 
     [ShowOnly]
     public Material CommandRangeMaterial;
+
+    [ShowOnly]
+    public Material HighlightMaterial;
+
+    private MeshRenderer GOMeshRenderer;
 
     [ShowOnly]
     public string ShaderTransparencyPropertyName = "Vector1_E165039D";
@@ -54,6 +60,15 @@ public class Interactable : MonoBehaviour
         if (other.gameObject.CompareTag(PlayerController.PlayerTag))
         {
             this.isWithinBounds = true;
+            var mats = this.GOMeshRenderer.materials.ToList();
+            mats.Add(this.HighlightMaterial);
+            this.GOMeshRenderer.materials = mats.ToArray();
+
+
+            this.DesiredCurrentTransparency = 0.0f;
+            this.DesiredCurrentCircleSize = 0.0f;
+            this.CommandRangeMaterial.SetFloat(this.ShaderTransparencyPropertyName, this.DesiredCurrentTransparency);
+            this.CommandRangeMaterial.SetFloat(this.ShaderColorSizePropertyName, this.DesiredCurrentCircleSize);
         }
     }
 
@@ -62,7 +77,9 @@ public class Interactable : MonoBehaviour
         if (other.gameObject.CompareTag(PlayerController.PlayerTag))
         {
             this.isWithinBounds = false;
-            //StartCoroutine(LurePlayerWithinBounds());
+            var mats = new[] { this.GOMeshRenderer.materials.First() };
+            this.GOMeshRenderer.materials = mats;
+            StartCoroutine(LurePlayerWithinBounds(this.AnimationTime));
         }
     }
 
@@ -70,8 +87,10 @@ public class Interactable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.GOMeshRenderer = this.gameObject.GetComponent<MeshRenderer>();
         this.robot = GameObject.FindGameObjectWithTag(RobotController.RobotTag);
         this.CommandRangeMaterial = this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials[0];
+        this.HighlightMaterial = Resources.Load(@"Materials/highlightMaterial") as Material;
         StartCoroutine(LurePlayerWithinBounds(this.AnimationTime));
     }
 
@@ -80,10 +99,8 @@ public class Interactable : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
         {
-
+            Debug.Log("I have been interacted with!");
         }
-
-
     }
 
     IEnumerator LurePlayerWithinBounds(float animationTime)
@@ -92,7 +109,7 @@ public class Interactable : MonoBehaviour
         {
             this.AnimationProgressTime = 0;
             var halfAnimation = animationTime / 2;
-            while (this.AnimationProgressTime < animationTime)
+            while (this.AnimationProgressTime < animationTime && !this.isWithinBounds)
             {
                 this.AnimationProgressTime += Time.deltaTime;
 

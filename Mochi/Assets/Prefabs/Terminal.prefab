@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5938021064214238186}
   - component: {fileID: 5938021064214238185}
   - component: {fileID: 5938021064214238184}
+  - component: {fileID: 269269775}
   m_Layer: 9
   m_Name: Terminal
   m_TagString: Untagged
@@ -128,6 +129,10 @@ MonoBehaviour:
   robot: {fileID: 0}
   isWithinBounds: 0
   CommandRangeMaterial: {fileID: 0}
+  HighlightMaterial: {fileID: 0}
+  ShaderTransparencyPropertyName: Vector1_E165039D
+  ShaderColorPropertyName: Color_696C87FA
+  ShaderColorSizePropertyName: Vector1_11CC1B9D
   AnimationTime: 10
   AnimationProgressTime: 0
   AnimationPercentage: 0
@@ -135,6 +140,20 @@ MonoBehaviour:
   MaximumCircleSize: 0.5
   DesiredCurrentTransparency: 0
   DesiredCurrentCircleSize: 0
+--- !u!136 &269269775
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938021064214238191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1001 &5562431188422480811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,7 +221,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CommandRange
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2115033643498824033, guid: eab6161311cf150498e39233b5dc8d0f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eab6161311cf150498e39233b5dc8d0f, type: 3}
 --- !u!4 &5794903833407042293 stripped
 Transform:

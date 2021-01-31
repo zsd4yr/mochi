@@ -6,6 +6,7 @@ TagManager:
   tags:
   - StartingRespawn
   - Robot
+  - RespawnManager
   layers:
   - Default
   - TransparentFX
