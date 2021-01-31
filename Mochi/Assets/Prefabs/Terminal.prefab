@@ -128,9 +128,13 @@ MonoBehaviour:
   robot: {fileID: 0}
   isWithinBounds: 0
   CommandRangeMaterial: {fileID: 0}
-  AnimationTime: 3
+  AnimationTime: 10
+  AnimationProgressTime: 0
+  AnimationPercentage: 0
   MaximumTransparency: 0.2
-  MaximumCircleSize: 0
+  MaximumCircleSize: 0.5
+  DesiredCurrentTransparency: 0
+  DesiredCurrentCircleSize: 0
 --- !u!1001 &5562431188422480811
 PrefabInstance:
   m_ObjectHideFlags: 0

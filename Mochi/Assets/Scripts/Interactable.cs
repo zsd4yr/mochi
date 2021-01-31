@@ -17,13 +17,13 @@ public class Interactable : MonoBehaviour
     public Material CommandRangeMaterial;
 
     [ReadOnly]
-    public readonly string ShaderTransparencyPropertyName = "Transparency";
+    public readonly string ShaderTransparencyPropertyName = "Vector1_E165039D";
 
     [ReadOnly]
-    public readonly string ShaderColorPropertyName = "Color";
+    public readonly string ShaderColorPropertyName = "Color_696C87FA";
 
     [ReadOnly]
-    public readonly string ShaderColorSizePropertyName = "ColorSize";
+    public readonly string ShaderColorSizePropertyName = "Vector1_11CC1B9D";
 
     public float AnimationTime;
 
@@ -36,6 +36,12 @@ public class Interactable : MonoBehaviour
     public float MaximumTransparency;
 
     public float MaximumCircleSize;
+
+    [ReadOnly]
+    public float DesiredCurrentTransparency;
+
+    [ReadOnly]
+    public float DesiredCurrentCircleSize;
 
     private void OnDrawGizmosSelected()
     {
@@ -92,19 +98,21 @@ public class Interactable : MonoBehaviour
 
                 this.AnimationPercentage = Mathf.Clamp01(this.AnimationProgressTime / animationTime);
 
-                float transparency = 0.0f;
                 // expanding
                 if (this.AnimationPercentage <= 0.5f)
                 {
-                    transparency = Mathf.Lerp(0.0f, this.MaximumTransparency, Mathf.Clamp01(this.AnimationPercentage / 0.5f));
+                    this.DesiredCurrentTransparency = Mathf.Lerp(0.0f, this.MaximumTransparency, Mathf.Clamp01(this.AnimationPercentage / 0.5f));
+                    this.DesiredCurrentCircleSize = Mathf.Lerp(0.0f, this.MaximumCircleSize, Mathf.Clamp01(this.AnimationPercentage / 0.5f));
                 }
                 //contracting
                 else
                 {
-                    transparency = Mathf.Lerp(0.0f, this.MaximumTransparency, Mathf.Clamp01((this.AnimationPercentage - 0.5f) / 0.5f));
+                    this.DesiredCurrentTransparency = Mathf.Lerp(this.MaximumTransparency, 0.0f, Mathf.Clamp01((this.AnimationPercentage - 0.5f) / 0.5f));
+                    this.DesiredCurrentCircleSize = Mathf.Lerp(this.MaximumCircleSize, 0.0f, Mathf.Clamp01((this.AnimationPercentage - 0.5f) / 0.5f));
                 }
 
-                this.CommandRangeMaterial.SetFloat(this.ShaderTransparencyPropertyName, transparency);
+                this.CommandRangeMaterial.SetFloat(this.ShaderTransparencyPropertyName, this.DesiredCurrentTransparency);
+                this.CommandRangeMaterial.SetFloat(this.ShaderColorSizePropertyName, this.DesiredCurrentCircleSize);
 
                 yield return null;
             }
