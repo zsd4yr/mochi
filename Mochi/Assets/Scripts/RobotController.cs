@@ -11,7 +11,7 @@ public class RobotController : MonoBehaviour
 {
     public static string RobotTag => "Robot";
 
-    public int DirectionMagnitude;
+    public float DirectionMagnitude;
 
     [ShowOnly]
     public NavMeshAgent Agent;
