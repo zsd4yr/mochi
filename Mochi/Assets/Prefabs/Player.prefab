@@ -747,7 +747,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8495390138872900091}
-  - component: {fileID: 8495390138872900094}
   - component: {fileID: 8495390138872900089}
   m_Layer: 0
   m_Name: Boy-Player
@@ -776,19 +775,6 @@ Transform:
   m_Father: {fileID: 8495390138495074143}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8495390138872900094
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495390138872900090}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.08415546, y: 0.16125, z: 0.0913558}
-  m_Center: {x: 0.0032843202, y: 0.076865874, z: 0.00071263313}
 --- !u!95 &8495390138872900089
 Animator:
   serializedVersion: 3
