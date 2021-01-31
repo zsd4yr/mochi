@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static string DialogueManagerTag = "DialogueManager";
 
-    public string ResourcesRelativeDialogueXMLFilePath;
+    public static string ResourcesRelativeDialogueXMLFilePath = "Dialogue";
 
     [ShowOnly]
     public List<string> AvailableTags;
@@ -19,11 +19,10 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Assert(!string.IsNullOrEmpty(this.ResourcesRelativeDialogueXMLFilePath), $"{nameof(this.ResourcesRelativeDialogueXMLFilePath)} cannot be null or empty. Please provide one.");
         this.AvailableTags = new List<string>();
         this.TagsToEncounters = new DialogueTagToEncountersMap();
 
-        var text = (TextAsset)Resources.Load(this.ResourcesRelativeDialogueXMLFilePath);
+        var text = (TextAsset)Resources.Load(ResourcesRelativeDialogueXMLFilePath);
         var xmlDoc = new XmlDocument();
         xmlDoc.LoadXml(text.text);
 

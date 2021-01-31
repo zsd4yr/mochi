@@ -727,7 +727,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: INTRO_BARK2
       objectReference: {fileID: 0}
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
@@ -742,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: TimeToDisplayEachTerminatingCharSeconds
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1018,11 +1018,6 @@ PrefabInstance:
     - target: {fileID: 7296642468778965287, guid: f7e124d2153414d4399f4a66b39f29e4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7296642470843323008, guid: f7e124d2153414d4399f4a66b39f29e4,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

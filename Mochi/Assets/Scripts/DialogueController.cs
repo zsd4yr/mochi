@@ -86,12 +86,12 @@ public class DialogueController : MonoBehaviour
                 if (elapsedSpeaker >= delayPerSnippet)
                 {
                     this.DialogueBox.text = encounter.Dialogues[snippetsDisplayed].Speaker + Environment.NewLine;
-                    snippetsDisplayed++;
-                    elapsedSpeaker = 0.0f;
                     yield return StartCoroutine(DelayedCharacters(
                         encounter.Dialogues[snippetsDisplayed], 
                         this.TimeToDisplayEachCharSeconds, 
                         this.TimeToDisplayEachTerminatingCharSeconds));
+                    snippetsDisplayed++;
+                    elapsedSpeaker = 0.0f;
                 }
 
                 elapsedSpeaker += Time.deltaTime;
