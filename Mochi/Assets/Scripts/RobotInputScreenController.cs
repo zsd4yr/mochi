@@ -11,14 +11,21 @@ public class RobotInputScreenController : MonoBehaviour
     public Button RightButton;
     public Button UpButton;
     public Button ExecuteButton;
+    public Button ActionButton;
+    public Button RespawnButton;
 
     public TextMeshProUGUI InputFeedbackDisplay;
 
-    private GameObject Robot;
-    private RobotController RobotController;
+    [ShowOnly]
+    public GameObject Robot;
+    [ShowOnly]
+    public RobotController RobotController;
 
-    private List<string> FeedbackLines;
-    private static readonly string MultiCommandLinePattern = "{0} x {1}";
+    [ShowOnly]
+    public List<string> FeedbackLines;
+
+    [ShowOnly]
+    private string MultiCommandLinePattern = "{0} x {1}";
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +35,8 @@ public class RobotInputScreenController : MonoBehaviour
         Debug.Assert(this.RightButton != null, $"{nameof(this.RightButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
         Debug.Assert(this.UpButton != null, $"{nameof(this.UpButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
         Debug.Assert(this.ExecuteButton != null, $"{nameof(this.ExecuteButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
+        Debug.Assert(this.ActionButton != null, $"{nameof(this.ActionButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
+        Debug.Assert(this.RespawnButton != null, $"{nameof(this.RespawnButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
         Debug.Assert(this.InputFeedbackDisplay != null, $"{nameof(this.InputFeedbackDisplay)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
 
         this.Robot = GameObject.FindGameObjectWithTag(RobotController.RobotTag).gameObject;
@@ -78,12 +87,12 @@ public class RobotInputScreenController : MonoBehaviour
             {
                 if (lastLineParts.Count() == 1)
                 {
-                    lastLine = string.Format(MultiCommandLinePattern, newText, "2");
+                    lastLine = string.Format(this.MultiCommandLinePattern, newText, "2");
                 }
                 else
                 {
                     var lastCount = int.Parse(lastLineParts[1]);
-                    lastLine = string.Format(MultiCommandLinePattern, newText, (lastCount + 1).ToString());
+                    lastLine = string.Format(this.MultiCommandLinePattern, newText, (lastCount + 1).ToString());
                 }
 
                 this.FeedbackLines[this.FeedbackLines.Count - 1] = lastLine;

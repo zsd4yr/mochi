@@ -17,13 +17,13 @@ public class Interactable : MonoBehaviour
     public Material CommandRangeMaterial;
 
     [ShowOnly]
-    public readonly string ShaderTransparencyPropertyName = "Vector1_E165039D";
+    public string ShaderTransparencyPropertyName = "Vector1_E165039D";
 
     [ShowOnly]
-    public readonly string ShaderColorPropertyName = "Color_696C87FA";
+    public string ShaderColorPropertyName = "Color_696C87FA";
 
     [ShowOnly]
-    public readonly string ShaderColorSizePropertyName = "Vector1_11CC1B9D";
+    public string ShaderColorSizePropertyName = "Vector1_11CC1B9D";
 
     public float AnimationTime;
 
