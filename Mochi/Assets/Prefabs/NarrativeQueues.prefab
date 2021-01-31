@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -201,7 +201,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_3_BARK4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_2_BARK2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -361,7 +361,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: INTRO_BARK4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -441,7 +441,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_2_BARK3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -521,7 +521,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_5_BARK2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -601,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: INTRO_BARK2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -681,7 +681,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: INTRO_BARK3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -761,7 +761,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_4_BARK2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -841,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_5_BARK3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -921,7 +921,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_2_BARK1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1001,7 +1001,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_4_BARK1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1081,7 +1081,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_3_BARK1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1161,7 +1161,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1241,7 +1241,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1321,7 +1321,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1401,7 +1401,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: INTRO_BARK1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1481,7 +1481,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_5_BARK1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1561,7 +1561,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
@@ -1641,7 +1641,7 @@ PrefabInstance:
     - target: {fileID: 7277329072199637946, guid: 437d18d4378acc749bb70351448817f7,
         type: 3}
       propertyPath: DialogueTag
-      value: INTRO_1
+      value: TERMINAL_3_BARK2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437d18d4378acc749bb70351448817f7, type: 3}
