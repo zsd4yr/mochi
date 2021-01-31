@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 8992433775991004251}
   - component: {fileID: 8992433775991004250}
   - component: {fileID: 8992433775991004249}
+  - component: {fileID: 4222837938874875373}
   m_Layer: 0
-  m_Name: Switch
+  m_Name: PressurePlateSwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,8 +93,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 21.456598, z: 1}
+  m_Center: {x: 0, y: 10.228299, z: 0}
 --- !u!114 &8992433775991004249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +111,20 @@ MonoBehaviour:
   speed: 10
   scale: 0.1
   growthRate: 0.1
+--- !u!114 &4222837938874875373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8992433775991004252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca9eca76fda1b342ae6f91c874d4ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 0}
+  animator: {fileID: 0}
+  openTrigger: 1
+  closeTrigger: 0
+  isPressurePlate: 1
