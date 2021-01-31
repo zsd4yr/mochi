@@ -6,6 +6,9 @@ using FMODUnity;
 
 public class AudioManager : MonoBehaviour
 {
+    public string sfxEvent;
+
+    EventInstance SoundEvent;
 
     // Start is called before the first frame update
     void Awake()
@@ -17,5 +20,13 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            RuntimeManager.PlayOneShot(sfxEvent);
+        }
     }
 }
