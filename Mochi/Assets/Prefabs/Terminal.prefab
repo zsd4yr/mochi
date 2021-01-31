@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5938021064214238185}
   - component: {fileID: 5938021064214238184}
   - component: {fileID: 269269775}
+  - component: {fileID: 684748724}
   m_Layer: 0
   m_Name: Terminal
   m_TagString: Untagged
@@ -29,14 +30,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5938021064214238191}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -8.8, y: -0.18, z: 0}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children:
   - {fileID: 5794903833407042293}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &5938021064214238180
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ MonoBehaviour:
   isWithinBounds: 0
   CommandRangeMaterialChildComponent: {fileID: 0}
   HighlightMaterial: {fileID: 0}
-  StartingMaterial: {fileID: 0}
+  StartingMaterials: []
   RobotInputScreenGO: {fileID: 0}
   ShaderTransparencyPropertyName: Vector1_E165039D
   ShaderColorPropertyName: Color_696C87FA
@@ -141,7 +142,7 @@ MonoBehaviour:
   AnimationProgressTime: 0
   AnimationPercentage: 0
   MaximumTransparency: 0.2
-  MaximumCircleSize: 0.5
+  MaximumCircleSize: 0.2
   DesiredCurrentTransparency: 0
   DesiredCurrentCircleSize: 0
 --- !u!136 &269269775
@@ -158,6 +159,19 @@ CapsuleCollider:
   m_Height: 0.0038541877
   m_Direction: 1
   m_Center: {x: 0.00044845045, y: -0.00022787631, z: 0.0019827702}
+--- !u!114 &684748724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938021064214238191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7753a3e10f59af84ba106c7260f69fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxEvent: event:/SFX/UI/Terminal_On
 --- !u!1001 &5562431188422480811
 PrefabInstance:
   m_ObjectHideFlags: 0
