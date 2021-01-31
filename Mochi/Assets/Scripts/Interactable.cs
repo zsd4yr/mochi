@@ -7,40 +7,40 @@ using UnityEngine.InputSystem;
 public class Interactable : MonoBehaviour
 {
     //public Camera cam;
-    [ReadOnly]
+    [ShowOnly]
     public GameObject robot;
 
-    [ReadOnly]
+    [ShowOnly]
     public bool isWithinBounds = false;
 
-    [ReadOnly]
+    [ShowOnly]
     public Material CommandRangeMaterial;
 
-    [ReadOnly]
+    [ShowOnly]
     public readonly string ShaderTransparencyPropertyName = "Vector1_E165039D";
 
-    [ReadOnly]
+    [ShowOnly]
     public readonly string ShaderColorPropertyName = "Color_696C87FA";
 
-    [ReadOnly]
+    [ShowOnly]
     public readonly string ShaderColorSizePropertyName = "Vector1_11CC1B9D";
 
     public float AnimationTime;
 
-    [ReadOnly]
+    [ShowOnly]
     public float AnimationProgressTime;
 
-    [ReadOnly]
+    [ShowOnly]
     public float AnimationPercentage;
 
     public float MaximumTransparency;
 
     public float MaximumCircleSize;
 
-    [ReadOnly]
+    [ShowOnly]
     public float DesiredCurrentTransparency;
 
-    [ReadOnly]
+    [ShowOnly]
     public float DesiredCurrentCircleSize;
 
     private void OnDrawGizmosSelected()
