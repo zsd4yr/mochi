@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public static string PlayerTag = "Player";
     public GameObject visual;
-    Rigidbody rb;
+    Rigidbody Rigidbody;
     GameControls controls;
     public float Accellaration = 100f;
     public Vector2 move;
@@ -13,9 +13,12 @@ public class PlayerController : MonoBehaviour
     private float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
 
+    [ShowOnly]
+    public Animator PlayerAnimator;
+
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        Rigidbody = GetComponent<Rigidbody>();
         controls = new GameControls();
     }
 
@@ -29,9 +32,23 @@ public class PlayerController : MonoBehaviour
         controls.Disable();
     }
 
+    void Start()
+    {
+        this.PlayerAnimator = this.GetComponentInChildren<Animator>();
+    }
+
     private void Update()
     {
-  
+        if (this.Rigidbody.velocity.magnitude >= 0.01)
+        {
+            this.PlayerAnimator.SetBool("isRunning", true);
+        }
+        else
+        {
+            //this.PlayerAnimator.SetBool("isRunning", false);
+        }
+
+        this.prevPos = this.transform.position;
     }
 
     void FixedUpdate()
@@ -41,15 +58,15 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(move.x, 0, move.y);
         Vector3 movementNomral = new Vector3(move.x, 0, move.y).normalized;
-        rb.AddForce(movement * Accellaration);
+        Rigidbody.AddForce(movement * Accellaration);
     }
 
     private void LateUpdate()
     {
-        if (rb.velocity.magnitude > 0.1f)
+        if (Rigidbody.velocity.magnitude > 0.1f)
         {
 
-            float targetAngle = Mathf.Atan2(rb.velocity.x, rb.velocity.z) * Mathf.Rad2Deg;
+            float targetAngle = Mathf.Atan2(Rigidbody.velocity.x, Rigidbody.velocity.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(visual.transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             visual.transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
