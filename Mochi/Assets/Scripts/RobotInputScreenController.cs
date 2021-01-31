@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class RobotInputScreenController : MonoBehaviour
 {
+    public static string RobotInputScreenTag = "RobotInputScreen";
+
     public Button DownButton;
     public Button LeftButton;
     public Button RightButton;
@@ -71,6 +73,9 @@ public class RobotInputScreenController : MonoBehaviour
 
         this.FeedbackLines = new List<string>();
         this.InputFeedbackDisplay.text = "Executing\nCommands...";
+
+        this.gameObject.GetComponent<Canvas>().enabled = false;
+        CameraController.Instance().ShowIsometricView();
     }
 
     public void OnActionButtonClicked()
