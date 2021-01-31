@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class Interactable : MonoBehaviour
 {
+    GameControls controls;
+
     //public Camera cam;
     [ShowOnly]
     public GameObject RobotGO;
@@ -56,6 +58,8 @@ public class Interactable : MonoBehaviour
     [ShowOnly]
     public float DesiredCurrentCircleSize;
 
+    private bool isEkeyPressed = false;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -95,10 +99,16 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        controls = new GameControls();
+        controls.GameController.Interact.performed += ctx => wasEkeyPressedThisFrame();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        
         this.RobotInputScreenGO = GameObject.FindGameObjectWithTag(RobotInputScreenController.RobotInputScreenTag);
         this.RobotInputScreen = this.RobotInputScreenGO.GetComponent<Canvas>();
 
@@ -110,14 +120,31 @@ public class Interactable : MonoBehaviour
         StartCoroutine(LurePlayerWithinBounds(this.AnimationTime));
     }
 
+    void wasEkeyPressedThisFrame()
+    {
+        isEkeyPressed = true;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
+        //if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
+        if (isWithinBounds && (isEkeyPressed || Keyboard.current.eKey.wasPressedThisFrame))
         {
             Debug.Log("I have been interacted with!");
             this.RobotInputScreen.enabled = true;
             CameraController.Instance().ShowTopDownView();
+            isEkeyPressed = false;
         }
     }
 
