@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
-    public Text diologueBox;
+    public Text dialogueBox;
     public string dialogueTag;
     public float sentenceDelay = 1.5f;
     public float characterDelay = 0.1f;
@@ -34,27 +34,43 @@ public class DialogueController : MonoBehaviour
 
     IEnumerator DelayedDialogue(float duration)
     {
-        float elapsed = 0.0f;
+        float elapsedSpeaker = 0.0f;
+        float elapsedCharacter = 0.0f;
 
-        for (int i = 0; i < displayDialogue.Dialogues.Count; i++)
+        if (displayDialogue != null)
         {
-            while (elapsed < duration)
-            {
-                if (displayDialogue != null)
-                {
-                    diologueBox.text = displayDialogue.Dialogues[i].Speaker + Environment.NewLine + displayDialogue.Dialogues[i].Message;
-                }
-                else
-                {
-                    diologueBox.text = "";
-                }
-                elapsed += Time.deltaTime;
 
+            for (int i = 0; i < displayDialogue.Dialogues.Count; i++)
+            {
+                while (elapsedSpeaker < duration)
+                {
+                    dialogueBox.text = displayDialogue.Dialogues[i].Speaker + Environment.NewLine;
+                    while (elapsedCharacter < characterDelay)
+                    {
+                        for (int j = 0; j < displayDialogue.Dialogues[i].Message.Length; j++)
+                        {
+                            //if (displayDialogue != null)
+                            //{
+                            dialogueBox.text += displayDialogue.Dialogues[i].Message[j];
+                            elapsedCharacter = 0.0f;
+                            //diologueBox.text += displayDialogue.Dialogues[i].Message;
+                            //}
+                            //else
+                            //{
+                            //    dialogueBox.text = "";
+                            //}
+                            elapsedSpeaker += Time.deltaTime;
+                            elapsedCharacter += Time.deltaTime;
+                            yield return null;
+                        }
+                        elapsedSpeaker = 0.0f;
+                    }
+                }
+
+                dialogueBox.text = "";
                 yield return null;
             }
-            elapsed = 0.0f;
         }
-        yield return null;
     }
 
 }
