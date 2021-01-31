@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2908743915878215247}
   - component: {fileID: 2242238486087049058}
   - component: {fileID: 5577867760139845389}
+  - component: {fileID: 5912402081644217592}
   m_Layer: 0
   m_Name: Rubble 1
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853437263365634370}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -2.9367986, y: 0.09162873, z: 2.237607}
-  m_LocalScale: {x: 7.260847, y: 7.260847, z: 7.260847}
+  m_LocalScale: {x: 10.738008, y: 10.738008, z: 15.240386}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &2242238486087049058
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5912402081644217592
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853437263365634370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -153830957423991239, guid: 86f117974a8b1a84e977e88fd703f20f, type: 3}

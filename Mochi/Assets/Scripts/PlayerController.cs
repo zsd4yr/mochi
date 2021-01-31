@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     [ShowOnly]
     public Animator PlayerAnimator;
 
+    public const string isRunning = nameof(isRunning);
+
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();
@@ -41,11 +43,11 @@ public class PlayerController : MonoBehaviour
     {
         if (this.Rigidbody.velocity.magnitude >= 0.01)
         {
-            this.PlayerAnimator.SetBool("isRunning", true);
+            this.PlayerAnimator.SetBool(isRunning, true);
         }
         else
         {
-            //this.PlayerAnimator.SetBool("isRunning", false);
+            this.PlayerAnimator.SetBool(isRunning, false);
         }
 
         this.prevPos = this.transform.position;

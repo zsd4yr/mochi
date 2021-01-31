@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4140767840001294592}
   - component: {fileID: 5248782691396489589}
   - component: {fileID: 8600353275059920784}
+  - component: {fileID: 573178123672759423}
   m_Layer: 0
   m_Name: 'Vent segment '
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4383760280672430779}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -20.893673, y: 0.33715308, z: 0}
-  m_LocalScale: {x: 29.836739, y: 29.836739, z: 29.836739}
+  m_LocalScale: {x: 42.165283, y: 42.16528, z: 42.16528}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &5248782691396489589
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &573178123672759423
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4383760280672430779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5854088795082504319, guid: 86f117974a8b1a84e977e88fd703f20f, type: 3}
