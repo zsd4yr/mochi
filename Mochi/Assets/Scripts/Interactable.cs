@@ -26,7 +26,12 @@ public class Interactable : MonoBehaviour
     public readonly string ShaderColorSizePropertyName = "ColorSize";
 
     public float AnimationTime;
-    private float animationProgressTime;
+
+    [ReadOnly]
+    public float AnimationProgressTime;
+
+    [ReadOnly]
+    public float AnimationPercentage;
 
     public float MaximumTransparency;
 
@@ -51,7 +56,7 @@ public class Interactable : MonoBehaviour
         if (other.gameObject.CompareTag(PlayerController.PlayerTag))
         {
             this.isWithinBounds = false;
-            StartCoroutine(LurePlayerWithinBounds());
+            //StartCoroutine(LurePlayerWithinBounds());
         }
     }
 
@@ -60,8 +65,8 @@ public class Interactable : MonoBehaviour
     void Start()
     {
         this.robot = GameObject.FindGameObjectWithTag(RobotController.RobotTag);
-        this.CommandRangeMaterial = this.gameObject.GetComponent<MeshRenderer>().material;
-        StartCoroutine(LurePlayerWithinBounds());
+        this.CommandRangeMaterial = this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials[0];
+        StartCoroutine(LurePlayerWithinBounds(this.AnimationTime));
     }
 
     // Update is called once per frame
@@ -75,24 +80,33 @@ public class Interactable : MonoBehaviour
 
     }
 
-    IEnumerator LurePlayerWithinBounds()
+    IEnumerator LurePlayerWithinBounds(float animationTime)
     {
         while (!this.isWithinBounds)
         {
-            this.animationProgressTime += Time.deltaTime;
-            var halfAnimationTime = this.AnimationTime / 2;
+            this.AnimationProgressTime = 0;
+            var halfAnimation = animationTime / 2;
+            while (this.AnimationProgressTime < animationTime)
+            {
+                this.AnimationProgressTime += Time.deltaTime;
 
-            //expanding
-            if (this.animationProgressTime >= halfAnimationTime)
-            {
-                var transValue = Mathf.Lerp(0, this.MaximumTransparency, this.animationProgressTime / halfAnimationTime);
-                //this.CommandRangeMaterial.SetFloat(this.ShaderTransparencyPropertyName, transValue);
-            }
-            //contracting
-            else
-            {
-                var transValue = Mathf.Lerp(this.MaximumTransparency, 0, (this.animationProgressTime - halfAnimationTime) / halfAnimationTime);
-                //this.CommandRangeMaterial.SetFloat(this.ShaderTransparencyPropertyName, transValue);
+                this.AnimationPercentage = Mathf.Clamp01(this.AnimationProgressTime / animationTime);
+
+                float transparency = 0.0f;
+                // expanding
+                if (this.AnimationPercentage <= 0.5f)
+                {
+                    transparency = Mathf.Lerp(0.0f, this.MaximumTransparency, Mathf.Clamp01(this.AnimationPercentage / 0.5f));
+                }
+                //contracting
+                else
+                {
+                    transparency = Mathf.Lerp(0.0f, this.MaximumTransparency, Mathf.Clamp01((this.AnimationPercentage - 0.5f) / 0.5f));
+                }
+
+                this.CommandRangeMaterial.SetFloat(this.ShaderTransparencyPropertyName, transparency);
+
+                yield return null;
             }
         }
 
