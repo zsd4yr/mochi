@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public string ResourcesRelativeDialogueXMLFilePath;
 
-    [ReadOnly]
+    [ShowOnly]
     public List<string> AvailableTags;
 
     [SerializeField()]
