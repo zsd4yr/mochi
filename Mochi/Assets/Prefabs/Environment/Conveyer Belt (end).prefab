@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 351255980795202140}
   - component: {fileID: 4668965600947270582}
   - component: {fileID: 1501633375043223197}
+  - component: {fileID: 8401343506961521410}
+  - component: {fileID: 423911598}
   m_Layer: 0
   m_Name: Conveyer Belt (end)
   m_TagString: Untagged
@@ -95,3 +97,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8792586484180348971, guid: 86f117974a8b1a84e977e88fd703f20f, type: 3}
+--- !u!114 &8401343506961521410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594196208740301384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff664953422fa040814028eecaea8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazardEvent: event:/SFX/Environment/Conveyor_Belt
+--- !u!65 &423911598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594196208740301384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.01609, y: 6.1995134, z: 2.7460258}
+  m_Center: {x: -0.06819092, y: -0.41259626, z: -1.3709545}
