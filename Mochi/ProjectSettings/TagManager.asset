@@ -7,6 +7,9 @@ TagManager:
   - StartingRespawn
   - Robot
   - RespawnManager
+  - DialogueManager
+  - DialogueScreen
+  - RobotInputScreen
   layers:
   - Default
   - TransparentFX

@@ -1,60 +1,173 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
-    public Text diologueBox;
-    public string dialogueTag;
-    public float sentenceDelay = 1.5f;
-    public float characterDelay = 0.1f;
+    public static string DialougeScreenTag = "DialogueScreen";
 
-    DialogueEncounter displayDialogue;
+    public string DialogueTag;
+
+    public float DefaultTimeToDisplayEachSentenceSeconds = 2;
+    public float DefaultTimeToDisplayEachCharSeconds = 0.05f;
+    public float DefaultTimeToDisplayEachTerminatingCharSeconds = 0.2f;
+
+    public float TimeToDisplayEachSentenceSeconds;
+    public float TimeToDisplayEachCharSeconds;
+    public float TimeToDisplayEachTerminatingCharSeconds;
+
+    [ShowOnly]
+    public GameObject DialogueManagerGO;
+
+    [ShowOnly]
+    public DialogueManager DialogueManager;
+
+    [ShowOnly]
+    public GameObject DialogueBoxGO;
+
+    [ShowOnly]
+    public TextMeshProUGUI DialogueBox;
+
+    private readonly char[] TerminatingChars = new[]
+    {
+        '.',
+        ',',
+        '?',
+        '!'
+    };
+
+    public bool isDisplayingDialogue;
+
+    void Start()
+    {
+        this.DialogueManagerGO = GameObject.FindGameObjectWithTag(DialogueManager.DialogueManagerTag);
+        this.DialogueManager = DialogueManagerGO.GetComponent<DialogueManager>();
+
+        this.DialogueBoxGO = GameObject.FindGameObjectWithTag(DialogueController.DialougeScreenTag);
+        this.DialogueBox = DialogueBoxGO.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        if (this.TimeToDisplayEachSentenceSeconds == 0)
+        {
+            this.TimeToDisplayEachSentenceSeconds = DefaultTimeToDisplayEachSentenceSeconds;
+        }
+
+        if (this.TimeToDisplayEachCharSeconds == 0)
+        {
+            this.TimeToDisplayEachCharSeconds = DefaultTimeToDisplayEachCharSeconds;
+        }
+
+        if (this.TimeToDisplayEachTerminatingCharSeconds == 0)
+        {
+            this.TimeToDisplayEachTerminatingCharSeconds = DefaultTimeToDisplayEachTerminatingCharSeconds;
+        }
+
+        this.isDisplayingDialogue = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        var dialogueManager = GetComponent<DialogueManager>();
-        if (dialogueManager.TagsToEncounters.ContainsKey(dialogueTag))
+        if (this.DialogueManager.TagsToEncounters.TryGetValue(this.DialogueTag, out var encounter))
         {
-            displayDialogue = dialogueManager.TagsToEncounters[dialogueTag];
-            StartCoroutine(DelayedDialogue(sentenceDelay));
+            StartCoroutine(DelayedDialogue(encounter, TimeToDisplayEachSentenceSeconds));
         }
         else
         {
-            Debug.Log("Dialogue Resource does not contain given tag: " + dialogueTag);
+            Debug.Log("Dialogue Resource does not contain given tag: " + DialogueTag);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        displayDialogue = null;
+        
     }
 
-    IEnumerator DelayedDialogue(float duration)
+    void Update()
     {
-        float elapsed = 0.0f;
-
-        for (int i = 0; i < displayDialogue.Dialogues.Count; i++)
+        if (Keyboard.current.pKey.wasPressedThisFrame)
         {
-            while (elapsed < duration)
+            if (this.DialogueManager.TagsToEncounters.TryGetValue(this.DialogueTag, out var encounter))
             {
-                if (displayDialogue != null)
+                StartCoroutine(DelayedDialogue(encounter, TimeToDisplayEachSentenceSeconds));
+            }
+        }
+    }
+
+    IEnumerator DelayedDialogue(DialogueEncounter encounter, float delayPerSnippet)
+    {
+        while (this.isDisplayingDialogue)
+        {
+            yield return null;
+        }
+
+        this.isDisplayingDialogue = true;
+        float elapsedSpeaker = 0.0f;
+        int snippetsDisplayed = 0;
+
+        if (encounter != null)
+        {
+            while (snippetsDisplayed < encounter.Dialogues.Count)
+            {
+                if (elapsedSpeaker >= delayPerSnippet)
                 {
-                    diologueBox.text = displayDialogue.Dialogues[i].Speaker + Environment.NewLine + displayDialogue.Dialogues[i].Message;
+                    this.DialogueBox.text = encounter.Dialogues[snippetsDisplayed].Speaker + Environment.NewLine;
+                    yield return StartCoroutine(DelayedCharacters(
+                        encounter.Dialogues[snippetsDisplayed], 
+                        this.TimeToDisplayEachCharSeconds, 
+                        this.TimeToDisplayEachTerminatingCharSeconds));
+                    snippetsDisplayed++;
+                    elapsedSpeaker = 0.0f;
                 }
-                else
-                {
-                    diologueBox.text = "";
-                }
-                elapsed += Time.deltaTime;
+
+                elapsedSpeaker += Time.deltaTime;
 
                 yield return null;
             }
-            elapsed = 0.0f;
         }
-        yield return null;
+
+        // wait one last time
+        elapsedSpeaker = 0.0f;
+        while (elapsedSpeaker >= delayPerSnippet)
+        {
+            yield return null;
+            elapsedSpeaker += Time.deltaTime;
+        }
+
+        this.isDisplayingDialogue = false;
+        this.DialogueBox.text = string.Empty;
+    }
+
+    IEnumerator DelayedCharacters(DialogueSnippet snippet, float delayPerChar, float delayPerTerminatingChar)
+    {
+        float elapsedCharacter = 0.0f;
+        int charsDisplayed = 0;
+
+        if (snippet != null)
+        {
+            while (charsDisplayed < snippet.Message.Length)
+            {
+                var previousChar = charsDisplayed > 0 ? snippet.Message[charsDisplayed-1] : snippet.Message[charsDisplayed];
+                var nextChar = snippet.Message[charsDisplayed];
+
+                var delay = this.TerminatingChars.ToList().Contains(previousChar) && nextChar != '\"' && nextChar != '”'
+                    ? delayPerTerminatingChar
+                    : delayPerChar;
+
+                if (elapsedCharacter >= delay)
+                {
+                    this.DialogueBox.text += snippet.Message[charsDisplayed];
+                    charsDisplayed++;
+                    elapsedCharacter = 0.0f;
+                }
+
+                elapsedCharacter += Time.deltaTime;
+                yield return null;
+            }
+        }
     }
 
 }

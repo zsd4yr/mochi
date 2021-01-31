@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!95 &746007020
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373007184916482953}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5fe7ca3c2d80094aba69394ee37872b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &2453966982555678424
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 523
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -882.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1402
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1025663018108745142, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_Name
+      value: Machine Arm
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_Name
+      value: Robot Arm2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555339612881038777, guid: 5579b158d79996b40897916db5183efc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f1de6eac6861b6448e451c0034fbcfb, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5579b158d79996b40897916db5183efc, type: 3}
+--- !u!1 &3373007184916482953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5579b158d79996b40897916db5183efc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2453966982555678424}
+  m_PrefabAsset: {fileID: 0}
