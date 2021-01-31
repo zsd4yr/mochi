@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
     public Material HighlightMaterial;
 
     [ShowOnly]
-    public Material StartingMaterial;
+    public Material[] StartingMaterials;
 
     private MeshRenderer MeshRendererComponent;
 
@@ -68,8 +68,10 @@ public class Interactable : MonoBehaviour
         {
             this.isWithinBounds = true;
 
-            var mats = new[] { this.HighlightMaterial };
-            this.MeshRendererComponent.materials = mats;
+            var mats = new List<Material>();
+            mats.Add(this.HighlightMaterial);
+            mats.AddRange(this.StartingMaterials);
+            this.MeshRendererComponent.materials = mats.ToArray();
 
             this.DesiredCurrentTransparency = 0.0f;
             this.DesiredCurrentCircleSize = 0.0f;
@@ -84,8 +86,7 @@ public class Interactable : MonoBehaviour
         {
             this.isWithinBounds = false;
 
-            var mats = new[] { this.StartingMaterial };
-            this.MeshRendererComponent.materials = mats;
+            this.MeshRendererComponent.materials = this.StartingMaterials;
             this.RobotInputScreen.enabled = false;
 
             CameraController.Instance().ShowIsometricView();
@@ -105,7 +106,7 @@ public class Interactable : MonoBehaviour
         this.RobotGO = GameObject.FindGameObjectWithTag(RobotController.RobotTag);
         this.CommandRangeMaterialChildComponent = this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials[0];
         this.HighlightMaterial = Resources.Load(@"Materials/highlightMaterial") as Material;
-        this.StartingMaterial = this.MeshRendererComponent.material;
+        this.StartingMaterials = this.MeshRendererComponent.materials;
         StartCoroutine(LurePlayerWithinBounds(this.AnimationTime));
     }
 
