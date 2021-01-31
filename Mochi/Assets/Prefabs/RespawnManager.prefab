@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6906350687094035855}
   m_Layer: 0
   m_Name: RespawnManager
-  m_TagString: Untagged
+  m_TagString: RespawnManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RespawnPlatforms: []
   CurrentRespawnPlatform: {fileID: 0}
+  Robot: {fileID: 0}

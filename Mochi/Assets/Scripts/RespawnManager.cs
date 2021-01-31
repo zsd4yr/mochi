@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +13,8 @@ public class RespawnManager : MonoBehaviour
 
     [ShowOnly]
     public GameObject Robot;
+
+    public static string RespawnManagerTag => "RespawnManager";
 
     void Start()
     {
@@ -43,7 +44,7 @@ public class RespawnManager : MonoBehaviour
         }
     }
 
-    private void RespawnRobot()
+    public void RespawnRobot()
     {
         Robot.transform.position = CurrentRespawnPlatform.transform.position;
     }

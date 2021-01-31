@@ -22,6 +22,11 @@ public class RobotInputScreenController : MonoBehaviour
     public RobotController RobotController;
 
     [ShowOnly]
+    public GameObject Respawner;
+    [ShowOnly]
+    public RespawnManager RespawnManager;
+
+    [ShowOnly]
     public List<string> FeedbackLines;
 
     [ShowOnly]
@@ -41,6 +46,10 @@ public class RobotInputScreenController : MonoBehaviour
 
         this.Robot = GameObject.FindGameObjectWithTag(RobotController.RobotTag).gameObject;
         this.RobotController = this.Robot.GetComponent<RobotController>();
+
+        this.Respawner = GameObject.FindGameObjectWithTag(RespawnManager.RespawnManagerTag).gameObject;
+        this.RespawnManager = this.Respawner.GetComponent<RespawnManager>();
+
         this.FeedbackLines = new List<string>();
     }
 
@@ -62,6 +71,16 @@ public class RobotInputScreenController : MonoBehaviour
 
         this.FeedbackLines = new List<string>();
         this.InputFeedbackDisplay.text = "Executing\nCommands...";
+    }
+
+    public void OnActionButtonClicked()
+    {
+        Debug.Log("There are no actions yet.");
+    }
+
+    public void OnRespawnButtonClicked()
+    {
+        this.RespawnManager.RespawnRobot();
     }
 
     private void OnDirectionButtonClicked(Vector3 direction, string newText)
