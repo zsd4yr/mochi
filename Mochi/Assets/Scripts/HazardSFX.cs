@@ -44,7 +44,7 @@ public class HazardSFX : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Robot"))
         {
 
             Debug.Log("Inside Hazard");
@@ -59,7 +59,7 @@ public class HazardSFX : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Robot"))
         {
             Debug.Log("Outside Hazard");
             //hazard.setParameterByName(parameterName, 0.00f);
