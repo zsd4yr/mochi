@@ -13,10 +13,10 @@ public class RobotController : MonoBehaviour
 
     public int DirectionMagnitude;
 
-    [ReadOnly]
+    [ShowOnly]
     public NavMeshAgent Agent;
 
-    [ReadOnly]
+    [ShowOnly]
     [SerializeField]
     public Queue<IRobotCommand> Commands;
 

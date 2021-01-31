@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GasTriggerController : MonoBehaviour
 {
-    [ReadOnly]
+    [ShowOnly]
     public bool isWithinBounds = false;
 
     Collider collider;

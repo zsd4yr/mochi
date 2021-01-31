@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public Camera IsometricCamera;
     public Camera TopDownCamera;
 
-    [ReadOnly]
+    [ShowOnly]
     public Camera CurrentActiveCamera;
 
     void Awake()

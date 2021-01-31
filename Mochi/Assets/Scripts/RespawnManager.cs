@@ -6,13 +6,13 @@ using UnityEngine.InputSystem;
 
 public class RespawnManager : MonoBehaviour
 {
-    [ReadOnly]
+    [ShowOnly]
     public List<GameObject> RespawnPlatforms;
 
-    [ReadOnly]
+    [ShowOnly]
     public GameObject CurrentRespawnPlatform;
 
-    [ReadOnly]
+    [ShowOnly]
     public GameObject Robot;
 
     void Start()
