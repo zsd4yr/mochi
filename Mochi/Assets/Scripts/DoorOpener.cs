@@ -11,6 +11,7 @@ public class DoorOpener : MonoBehaviour
     public bool openTrigger = false;
 
     public bool closeTrigger = false;
+    public bool isPressurePlate;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,14 @@ public class DoorOpener : MonoBehaviour
             {
                 animator.SetBool("isOpening", false);
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(isPressurePlate)
+        {
+            animator.SetBool("isOpening", false);
         }
     }
 
