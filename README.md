@@ -37,32 +37,7 @@ Ritsu and MOCHI is an isometric puzzle game. Follow Ritsu the young robotics eng
 
 <h1>Credits</h1>
 
-Producer
-Paul “Puzzle6” Scherer
-
-Programmer
-Zach Danz @defaulttidus
-
-Programmer
-Mike Bell
-
-Designer/Programmer
-Greg Morton
-
-Coder/Composer
-Wesley Meyer
-
-Technical Sound Designer
-Fabian Fabro
-
-Artist
-Audrey Meyer
-
-Artist
-Reginald King
-
-Game Writer
-Drew “Chippy” Scott
+![Credits](Images/Credits2.png)
 
 <h2>GGJ Video</h2>
 https://youtu.be/4TgkPzFReYw
