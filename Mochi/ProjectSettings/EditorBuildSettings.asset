@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Zach/Zach_Camera_Scene.unity
     guid: 4bf0a15083218f9448d1b43e78cc22fd
+  - enabled: 0
+    path: Assets/Scenes/Mike/Splash.unity
+    guid: 3fdec460b1d96b143bc54239b5c4d26a
   m_configObjects: {}
