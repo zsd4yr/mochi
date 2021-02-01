@@ -2666,11 +2666,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2106369334334233692}
     m_Modifications:
-    - target: {fileID: 1902147828551422700, guid: 69249b55e5f81784cb10b512a72dc87e,
-        type: 3}
-      propertyPath: TimeToDisplayEachSentenceSeconds
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4395328177277625873, guid: 69249b55e5f81784cb10b512a72dc87e,
         type: 3}
       propertyPath: m_Name
