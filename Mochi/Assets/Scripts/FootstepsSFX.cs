@@ -8,6 +8,23 @@ public class FootstepsSFX : MonoBehaviour
 {
     private EventInstance footsteps;
 
+    Animator anim;
+
+    void AddEvent(int Clip, float time, string functionName, float floatParameter)
+    {
+        //anim = GetComponent<Animator>();
+        //AnimationEvent animationEvent = new AnimationEvent {
+        //    functionName = functionName,
+        //    floatParameter = floatParameter,
+        //    time = time
+        //};
+        //animationEvent.functionName = functionName;
+        //animationEvent.floatParameter = floatParameter;
+        //animationEvent.time = time;
+        //AnimationClip clip = anim.runtimeAnimatorController.animationClips[Clip];
+    }
+
+
     void PlayFootsteps()
     {
         footsteps = RuntimeManager.CreateInstance("event:/SFX/Human/Human_walk");
@@ -19,7 +36,8 @@ public class FootstepsSFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //anim = GetComponent<Animator>();
+        //AddEvent(1, 0.00f, "PlayFootsteps", 0);
     }
 
     // Update is called once per frame
