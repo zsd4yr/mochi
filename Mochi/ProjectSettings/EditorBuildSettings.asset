@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Zach/Zach_Camera_Scene.unity
     guid: 4bf0a15083218f9448d1b43e78cc22fd
+  - enabled: 0
+    path: Assets/Scenes/Mike/Splash.unity
+    guid: 3fdec460b1d96b143bc54239b5c4d26a
+  - enabled: 0
+    path: Assets/Scenes/Audrey/AudreyScene.unity
+    guid: 20e72c9711aa5e44e9777da210716a34
+  - enabled: 1
+    path: Assets/Scenes/Zach/Zach_Super_Secret_Scene/Zach_Super_Secret.unity
+    guid: 3f4b4eb2a45de7c49aedd2b01b5cb9b7
   m_configObjects: {}
