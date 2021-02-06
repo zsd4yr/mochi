@@ -22,15 +22,17 @@ public class DoorOpener : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Robot"))
+        if(other.CompareTag("Robot") || other.CompareTag("Player"))
         {
             if(openTrigger)
             {
                 animator.SetBool("isOpening", true);
+                this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled = false;
             }
             else if (closeTrigger)
             {
                 animator.SetBool("isOpening", false);
+                this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled = true;
             }
         }
     }

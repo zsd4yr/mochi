@@ -12,6 +12,7 @@ public class JumpButtonPress : MonoBehaviour
     public float NumberJumps = 0f;
     public float MaxJumps = 2;
     private Rigidbody rb;
+    public GameObject ExampleObject;
     GameControls controls;
     public Animator PlayerAnimator;
     public const string isJumping = nameof(isJumping);
@@ -30,6 +31,7 @@ public class JumpButtonPress : MonoBehaviour
     void Start()
     {
         this.PlayerAnimator = this.GetComponentInChildren<Animator>();
+        ExampleObject = GameObject.Find("CameraController");
     }
 
     void Update()
@@ -45,10 +47,10 @@ public class JumpButtonPress : MonoBehaviour
             {
                 this.PlayerAnimator.SetBool(isJumping, true);
 
-                //rb.AddForce(0, 0, jumpHeight, ForceMode.Impulse);
+                rb.AddForce(0, 0, jumpHeight, ForceMode.Impulse);
+                ExampleObject.transform.parent = null;
 
 
-                
                 //currJump += temp;
                 //controller.Move(Vector3.up * temp * Time.deltaTime * jumpSpeed);
 
@@ -63,6 +65,7 @@ public class JumpButtonPress : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        ExampleObject.transform.parent = this.transform;
         isGrounded = true;
         NumberJumps = 0;
         this.PlayerAnimator.SetBool(isJumping, false);

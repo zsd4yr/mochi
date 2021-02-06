@@ -427,10 +427,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2c193e2fc95464c9e6d4f8a99acf7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 0.15
+  jumpHeight: 0.2
   isGrounded: 0
   NumberJumps: 0
   MaxJumps: 2
+  ExampleObject: {fileID: 0}
   PlayerAnimator: {fileID: 0}
 --- !u!1 &8495390138536016038
 GameObject:
