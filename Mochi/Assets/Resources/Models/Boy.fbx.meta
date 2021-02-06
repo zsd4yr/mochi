@@ -8,7 +8,7 @@ ModelImporter:
     second: idle
   - first:
       74: 6291758564428842403
-    second: crawl
+    second: crawling
   - first:
       74: -5497966255740390507
     second: happyWalk
@@ -30,6 +30,15 @@ ModelImporter:
   - first:
       74: 4422654885038932220
     second: sitting
+  - first:
+      74: -3579208771848967941
+    second: Crawl
+  - first:
+      74: -7332522026633846041
+    second: crawling
+  - first:
+      74: -7332522026633846041
+    second: crawl
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -99,7 +108,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

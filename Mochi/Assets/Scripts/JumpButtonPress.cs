@@ -16,10 +16,15 @@ public class JumpButtonPress : MonoBehaviour
     GameControls controls;
     public Animator PlayerAnimator;
     public const string isJumping = nameof(isJumping);
+    public const string isCrawling = nameof(isCrawling);
+    public const string Crawling = nameof(Crawling);
+
+    public RigidbodyConstraints originalConstraints;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        originalConstraints = rb.constraints;
         controls = new GameControls();
     }
 
@@ -46,11 +51,11 @@ public class JumpButtonPress : MonoBehaviour
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 this.PlayerAnimator.SetBool(isJumping, true);
-
-                rb.AddForce(0, 0, jumpHeight, ForceMode.Impulse);
                 ExampleObject.transform.parent = null;
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionZ;
 
-
+                rb.AddForce(0, 0, jumpHeight, ForceMode.Impulse);                
+                
                 //currJump += temp;
                 //controller.Move(Vector3.up * temp * Time.deltaTime * jumpSpeed);
 
@@ -60,15 +65,38 @@ public class JumpButtonPress : MonoBehaviour
                 NumberJumps += 1;
                 print("Hey!");
             }
+
+            else if (Keyboard.current.cKey.wasPressedThisFrame)
+            {
+                if (this.PlayerAnimator.GetBool(Crawling) == false)
+                {
+                    GetComponent<CapsuleCollider>().enabled = false;
+                    GetComponent<SphereCollider>().enabled = true;
+                    //swap colliders.
+                    this.PlayerAnimator.SetBool(Crawling, true);
+                    //this.PlayerAnimator.SetBool(isCrawling, false);
+                }
+                else
+                {
+                    GetComponent<CapsuleCollider>().enabled = true;
+                    GetComponent<SphereCollider>().enabled = false;
+                    //swap colliders.
+                    this.PlayerAnimator.SetBool(isCrawling, false);
+                    this.PlayerAnimator.SetBool(Crawling, false);
+                }
+                print("HII");
+            }
         }
     }
 
     void OnCollisionEnter(Collision other)
     {
         ExampleObject.transform.parent = this.transform;
+        GetComponent<Rigidbody>().constraints = originalConstraints;
         isGrounded = true;
         NumberJumps = 0;
         this.PlayerAnimator.SetBool(isJumping, false);
+        
     }
 
     void OnCollisionExit(Collision other)

@@ -174,7 +174,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8536840621472898121}
-    m_Position: {x: 561.6843, y: 20.566086, z: 0}
+    m_Position: {x: 560, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4964679346905865641}
     m_Position: {x: 280, y: 90, z: 0}
@@ -196,7 +196,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CloseDoor 0
-  m_Speed: 2
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2491573460488579129}
@@ -224,7 +224,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OpenDoor
-  m_Speed: 2
+  m_Speed: 3.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6629559790959659434}
