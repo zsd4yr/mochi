@@ -16,9 +16,9 @@ public class RobotController : MonoBehaviour
     [ShowOnly]
     public NavMeshAgent Agent;
 
-    [ShowOnly]
-    [SerializeField]
+    //[ShowOnly]
     public Queue<IRobotCommand> Commands;
+    //[SerializeField]
 
     void Start()
     {
@@ -57,6 +57,9 @@ public class RobotController : MonoBehaviour
 
     public void OnExecuteQueue()
         => StartCoroutine(this.ExecuteQueue());
+
+    public void OnDestroyQueue()
+        => this.Commands.Clear();
 
     IEnumerator ExecuteQueue()
     {
@@ -124,6 +127,8 @@ public class RobotController : MonoBehaviour
                         yield return null;
                     }
                     break;
+
+                    
             }
         }
         Debug.Log($"Robot's Command Queue is now empty.");

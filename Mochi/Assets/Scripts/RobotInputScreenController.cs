@@ -86,6 +86,9 @@ public class RobotInputScreenController : MonoBehaviour
     public void OnRespawnButtonClicked()
     {
         this.RespawnManager.RespawnRobot();
+        RobotController.Agent.SetDestination(RespawnManager.GetRespawnPlatform().position);
+        
+        //note: set requested position to the respawn position
     }
 
     private void OnDirectionButtonClicked(Vector3 direction, string newText)
@@ -95,6 +98,7 @@ public class RobotInputScreenController : MonoBehaviour
         this.UpdateFeedbackText(newText);
 
         this.RobotController.EnqueueCommand(new RobotMoveCommand(newPosition));
+        //note spawn at center and figure out amt of Unity squares. +direction amt + direction amt units you're going. 
     }
 
     private void UpdateFeedbackText(string newText)
