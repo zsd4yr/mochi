@@ -18,6 +18,7 @@ public class JumpButtonPress : MonoBehaviour
     public const string isJumping = nameof(isJumping);
     public const string isCrawling = nameof(isCrawling);
     public const string Crawling = nameof(Crawling);
+    
 
     public RigidbodyConstraints originalConstraints;
 
