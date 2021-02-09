@@ -146,7 +146,7 @@ GameObject:
   m_Name: UIContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7296642468778965287
@@ -312,7 +312,7 @@ GameObject:
   m_Name: DialogueScreen
   m_TagString: DialogueScreen
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &5855421775763423003

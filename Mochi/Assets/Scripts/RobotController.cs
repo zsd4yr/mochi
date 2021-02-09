@@ -127,12 +127,11 @@ public class RobotController : MonoBehaviour
                         yield return null;
                     }
                     break;
-
-                    
+                    //Figure out way to move character to exact middle of square on floor
             }
         }
         Debug.Log($"Robot's Command Queue is now empty.");
-
+        /*Snap robot to middle of last square ended up*/
         yield return null;
     }
 

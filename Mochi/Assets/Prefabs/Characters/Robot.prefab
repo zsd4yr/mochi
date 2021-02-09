@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015e2457d075d474e8a4682d2046f494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DirectionMagnitude: 3
+  DirectionMagnitude: 2.1
   Agent: {fileID: 0}
 --- !u!195 &7820901481080580448
 NavMeshAgent:

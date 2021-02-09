@@ -42,9 +42,13 @@ public class DoorOpener : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (isPressurePlate)
+        if (other.CompareTag(EnteredName) || other.CompareTag(EnteredName))
         {
-            animator.SetBool("isOpening", false);
+            if (isPressurePlate)
+            {
+                animator.SetBool("isOpening", false);
+                this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled = true;
+            }
         }
     }
 
