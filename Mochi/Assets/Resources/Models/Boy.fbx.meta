@@ -274,7 +274,7 @@ ModelImporter:
       name: run
       takeName: Armature.007|run
       internalID: 0
-      firstFrame: 0
+      firstFrame: 10.4
       lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0
