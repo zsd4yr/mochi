@@ -69,6 +69,8 @@ public class RobotInputScreenController : MonoBehaviour
 
     public void OnExecuteButtonClicked()
     {
+
+        RobotController.Agent.isStopped = false;
         this.RobotController.OnExecuteQueue();
 
         this.FeedbackLines = new List<string>();
@@ -86,8 +88,10 @@ public class RobotInputScreenController : MonoBehaviour
     public void OnRespawnButtonClicked()
     {
         this.RespawnManager.RespawnRobot();
-        RobotController.Agent.SetDestination(RespawnManager.GetRespawnPlatform().position);
-        
+        //RobotController.Agent.SetDestination(RespawnManager.GetRespawnPlatform().position);
+        RobotController.Agent.Warp(RespawnManager.GetRespawnPlatform().position);
+        RobotController.Agent.ResetPath();
+        RobotController.Agent.isStopped = true;
         //note: set requested position to the respawn position
     }
 
