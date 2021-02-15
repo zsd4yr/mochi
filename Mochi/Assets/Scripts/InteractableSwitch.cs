@@ -71,7 +71,8 @@ public class InteractableSwitch : MonoBehaviour
     public bool m_DoorOpenTrigger = true, 
                 m_DoorCloseTrigger = false;
 
-    public bool m_CanFlip = true;
+    public bool m_CanFlip = true,
+                m_IsShrinking = false;
 
     private void OnDrawGizmosSelected()
     {
@@ -168,16 +169,32 @@ public class InteractableSwitch : MonoBehaviour
                 //    this.transform.parent.gameObject.GetComponent<Collider>().enabled = true;
                 //}
             }
-            else if (m_SwitchType == Enumerators.SwitchType.ShrinkObject)
+            else if (m_SwitchType == Enumerators.SwitchType.ShrinkObject && !m_IsShrinking)
             {
-                m_Scale = m_ShrinkRate * Time.deltaTime;
-                //door.transform.Translate(Vector3.down * Time.deltaTime * speed);
-                m_ShrinkObject.transform.localScale = new Vector3(1f, 1f, 1f) * m_Scale;
-                if (m_Scale <= m_MinSize) 
-                   Destroy(m_ShrinkObject);
+                m_IsShrinking = true;
+                //m_Scale = m_ShrinkRate * Time.deltaTime;
+                ////door.transform.Translate(Vector3.down * Time.deltaTime * speed);
+                //m_ShrinkObject.transform.localScale = new Vector3(0f, 1f, 0f) * m_Scale;
+                //if (m_Scale <= m_MinSize) 
+                //   Destroy(m_ShrinkObject);
             }
+            
             m_CanFlip = false;
             isEkeyPressed = false;
+        }
+
+        if (m_IsShrinking && m_ShrinkObject != null)
+        {
+            m_ShrinkObject.transform.localScale = Vector3.Lerp(m_ShrinkObject.transform.localScale, Vector3.zero, m_ShrinkRate);
+
+            //m_Scale = m_ShrinkRate * Time.deltaTime;
+            //door.transform.Translate(Vector3.down * Time.deltaTime * speed);
+            //m_ShrinkObject.transform.localScale = new Vector3(0f, 1f, 0f) * m_Scale;
+            if (m_ShrinkObject.transform.localScale == Vector3.zero)
+            {
+                Destroy(m_ShrinkObject);
+                m_ShrinkObject = null;
+            }
         }
     }
 
