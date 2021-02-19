@@ -11,9 +11,9 @@ public class DoorOpener : MonoBehaviour
     public Animator animator;
 
     public bool openTrigger = false;
-
     public bool closeTrigger = false;
-    public bool isPressurePlate;
+
+    public bool isSingleUse;
     public string EnteredName = "Robot";
 
     // Start is called before the first frame update
@@ -42,13 +42,10 @@ public class DoorOpener : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(EnteredName) || other.CompareTag(EnteredName))
+        if (isSingleUse && (other.CompareTag(EnteredName) || other.CompareTag(EnteredName)) )
         {
-            if (isPressurePlate)
-            {
-                animator.SetBool("isOpening", false);
-                this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled = true;
-            }
+            animator.SetBool("isOpening", false);
+            this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled = true;
         }
     }
 

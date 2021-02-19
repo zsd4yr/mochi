@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     public float Accellaration = 100f;
     public Vector2 move;
     private Vector3 prevPos;
-    public bool crawler = false;
+    public bool crawler = false,
+                canWalk = true,
+                beingRepelled = false;
 
     private float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (this.PlayerAnimator.GetBool(isJumping) == false)
+        if (/*canWalk &&*/ this.PlayerAnimator.GetBool(isJumping) == false)
         {
             if (this.Rigidbody.velocity.magnitude >= 0.01)
             {
@@ -69,9 +71,8 @@ public class PlayerController : MonoBehaviour
                         this.PlayerAnimator.SetBool(isWalking, true);
                         this.PlayerAnimator.SetBool(isRunning, false);
                     }
-                }
-                
-                 else 
+                }                
+                else 
                 {
                     //this.PlayerAnimator.SetBool(Crawling, false);
                     this.PlayerAnimator.SetBool(isCrawling, true);
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (this.PlayerAnimator.GetBool(isJumping) == false)
+        if (/*canWalk &&*/ this.PlayerAnimator.GetBool(isJumping) == false)
         {
             controls.GameController.Movement.performed += ctx => move = ctx.ReadValue<Vector2>();
             controls.GameController.Movement.canceled += ctx => move = Vector2.zero;
@@ -111,13 +112,16 @@ public class PlayerController : MonoBehaviour
             {
                 Rigidbody.AddForce(movement * Accellaration);
             }
+            if(beingRepelled)
+                Rigidbody.AddForce(movement * (-Accellaration * 2f));
+
         }
         //If not jumping, then move.
     }
 
     private void LateUpdate()
     {
-        if (Rigidbody.velocity.magnitude > 0.1f)
+        if (/*canWalk &&*/ Rigidbody.velocity.magnitude > 0.1f)
         {
             float targetAngle = Mathf.Atan2(Rigidbody.velocity.x, Rigidbody.velocity.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(visual.transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
