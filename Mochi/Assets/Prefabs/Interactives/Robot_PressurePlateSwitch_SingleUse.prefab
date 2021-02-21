@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b4e8d00f43da9db4b9be5bada86ef5ba, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,5 +127,5 @@ MonoBehaviour:
   animator: {fileID: 0}
   openTrigger: 1
   closeTrigger: 0
-  isPressurePlate: 1
+  isSingleUse: 0
   EnteredName: Robot

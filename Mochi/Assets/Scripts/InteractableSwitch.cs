@@ -76,7 +76,7 @@ public class InteractableSwitch : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.green;
         if(GetComponent<CapsuleCollider>() != null)
             Gizmos.DrawWireSphere(transform.position, GetComponent<CapsuleCollider>().radius);
     }

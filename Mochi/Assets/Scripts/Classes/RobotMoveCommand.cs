@@ -14,6 +14,7 @@ public class RobotMoveCommand : IRobotCommand
         this.WorldPositionWithinNavMesh = SentinelUnsetVector;
     }
 
+    
     public void SetWorldPositionWithinNavMesh(Vector3 worldPositionWithinNavMesh)
         => this.WorldPositionWithinNavMesh = worldPositionWithinNavMesh;
 
