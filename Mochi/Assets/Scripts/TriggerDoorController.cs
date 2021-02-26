@@ -13,7 +13,7 @@ public class TriggerDoorController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "Robot")
+        if(other.name == "Robot" || other.gameObject.CompareTag("Robot"))
         {
             openTrigger = true;
         }
