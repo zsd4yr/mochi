@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DirectionMagnitude: 2.1
+  DestinationMarkerPrefab: {fileID: 0}
   Agent: {fileID: 0}
 --- !u!195 &7820901481080580448
 NavMeshAgent:
