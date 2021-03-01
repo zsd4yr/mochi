@@ -30,19 +30,21 @@ public class DoorOpener : MonoBehaviour
             if (openTrigger)
             {
                 animator.SetBool("isOpening", true);
-                this.transform.parent.gameObject.GetComponent<Collider>().enabled = false;
+                //this.transform.parent.gameObject.GetComponent<Collider>().enabled = false;
+                GetComponent<Collider>().enabled = false;
             }
             else if (closeTrigger)
             {
                 animator.SetBool("isOpening", false);
-                this.transform.parent.gameObject.GetComponent<Collider>().enabled = true;
+                //this.transform.parent.gameObject.GetComponent<Collider>().enabled = true;
+                GetComponent<Collider>().enabled = true;
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (isSingleUse && (other.CompareTag(EnteredName) || other.CompareTag(EnteredName)) )
+        if (isSingleUse && (other.CompareTag(EnteredName) || other.CompareTag(EnteredName)))
         {
             animator.SetBool("isOpening", false);
             this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled = true;

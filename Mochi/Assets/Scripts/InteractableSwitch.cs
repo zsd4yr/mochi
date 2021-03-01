@@ -161,7 +161,8 @@ public class InteractableSwitch : MonoBehaviour
                 if (m_DoorOpenTrigger)
                 {
                     m_DoorAnimator.SetBool("isOpening", true);
-                    this.transform.parent.gameObject.GetComponent<Collider>().enabled = false;
+                    //this.transform.parent.gameObject.GetComponent<Collider>().enabled = false;
+                    GetComponent<Collider>().enabled = false;
                 }
                 //else if (m_DoorCloseTrigger)
                 //{

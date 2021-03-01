@@ -11229,6 +11229,11 @@ PrefabInstance:
       propertyPath: m_ShrinkObject
       value: 
       objectReference: {fileID: 1982438091}
+    - target: {fileID: 597841605967871673, guid: 5555ed530dc95224ab7c62a85b7391f9,
+        type: 3}
+      propertyPath: StartingMaterials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1959395290599563797, guid: 5555ed530dc95224ab7c62a85b7391f9,
         type: 3}
       propertyPath: m_Name
