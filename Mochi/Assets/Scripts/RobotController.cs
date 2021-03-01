@@ -30,24 +30,24 @@ public class RobotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            if (!EventSystem.current.IsPointerOverGameObject())
-            {
-                Vector3 mouseDown = new Vector3
-                {
-                    x = Mouse.current.position.x.ReadValue(),
-                    y = Mouse.current.position.y.ReadValue()
-                };
-                Ray ray = CameraController.Instance().GetCurrentCamera().ScreenPointToRay(mouseDown);
+        //if(Mouse.current.leftButton.wasPressedThisFrame)
+        //{
+        //    if (!EventSystem.current.IsPointerOverGameObject())
+        //    {
+        //        Vector3 mouseDown = new Vector3
+        //        {
+        //            x = Mouse.current.position.x.ReadValue(),
+        //            y = Mouse.current.position.y.ReadValue()
+        //        };
+        //        Ray ray = CameraController.Instance().GetCurrentCamera().ScreenPointToRay(mouseDown);
 
-                if (Physics.Raycast(ray, out RaycastHit hit))
-                {
-                    var moveCommand = new RobotMoveAbsoluteCommand(hit.point, mouseDown);
-                    this.EnqueueCommand(moveCommand);
-                }
-            }
-        }        
+        //        if (Physics.Raycast(ray, out RaycastHit hit))
+        //        {
+        //            var moveCommand = new RobotMoveAbsoluteCommand(hit.point, mouseDown);
+        //            this.EnqueueCommand(moveCommand);
+        //        }
+        //    }
+        //}        
     }
 
     public IRobotCommand PeekLastCommand()

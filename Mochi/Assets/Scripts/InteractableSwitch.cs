@@ -222,10 +222,11 @@ public class InteractableSwitch : MonoBehaviour
                     this.DesiredCurrentTransparency = Mathf.Lerp(this.MaximumTransparency, 0.0f, Mathf.Clamp01((this.AnimationPercentage - 0.5f) / 0.5f));
                     this.DesiredCurrentCircleSize = Mathf.Lerp(this.MaximumCircleSize, 0.0f, Mathf.Clamp01((this.AnimationPercentage - 0.5f) / 0.5f));
                 }
-
-                this.CommandRangeMaterialChildComponent.SetFloat(this.ShaderTransparencyPropertyName, this.DesiredCurrentTransparency);
-                this.CommandRangeMaterialChildComponent.SetFloat(this.ShaderColorSizePropertyName, this.DesiredCurrentCircleSize);
-
+                if (this.CommandRangeMaterialChildComponent != null)
+                {
+                    this.CommandRangeMaterialChildComponent.SetFloat(this.ShaderTransparencyPropertyName, this.DesiredCurrentTransparency);
+                    this.CommandRangeMaterialChildComponent.SetFloat(this.ShaderColorSizePropertyName, this.DesiredCurrentCircleSize);
+                }
                 yield return null;
             }
         }
