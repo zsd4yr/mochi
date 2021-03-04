@@ -93,6 +93,7 @@ public class RobotInputScreenController : MonoBehaviour
         //RobotController.Agent.SetDestination(RespawnManager.GetRespawnPlatform().position);
         RobotController.Agent.Warp(RespawnManager.GetRespawnPlatform().position);
         RobotController.Agent.ResetPath();
+        RobotController.OnDestroyQueue();
         RobotController.Agent.isStopped = true;
         //note: set requested position to the respawn position
     }
@@ -104,7 +105,7 @@ public class RobotInputScreenController : MonoBehaviour
         this.UpdateFeedbackText(newText);
 
         this.RobotController.EnqueueCommand(new RobotMoveCommand(newPosition));
-        this.RobotController.PlaceMarkerAtSpot(newPosition);
+        //this.RobotController.PlaceMarkerAtSpot(newPosition);
         //note spawn at center and figure out amt of Unity squares. +direction amt + direction amt units you're going. 
     }
     

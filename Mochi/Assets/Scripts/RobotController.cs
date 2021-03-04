@@ -100,8 +100,8 @@ public class RobotController : MonoBehaviour
                             Debug.Log($"Setting new Robot destination to {robotMoveAbsoluteCommand.WorldPositionWithinNavMesh}");
                             //PlaceMarkerAtSpot(this.Agent.destination);
                         }
-                        if (this.Agent.destination != previousDestination)
-                            PlaceMarkerAtSpot(this.Agent.destination);
+                        //if (this.Agent.destination != previousDestination)
+                        //    PlaceMarkerAtSpot(this.Agent.destination);
                         yield return null;
                     }
                     break;
@@ -132,7 +132,7 @@ public class RobotController : MonoBehaviour
                         if (this.Agent.destination != previousDestination)
                         {
                             Debug.Log($"Setting new Robot destination to {robotMoveCommand.WorldPositionWithinNavMesh}");
-                            PlaceMarkerAtSpot(this.Agent.destination);
+                            //PlaceMarkerAtSpot(this.Agent.destination);
                         }
                         
                         yield return null;
