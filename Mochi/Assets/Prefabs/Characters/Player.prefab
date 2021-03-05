@@ -319,7 +319,6 @@ GameObject:
   - component: {fileID: 520861180}
   - component: {fileID: 1507078150185406873}
   - component: {fileID: 1857158192}
-  - component: {fileID: 5601191856497944116}
   - component: {fileID: 2314490878233143798}
   m_Layer: 10
   m_Name: Player
@@ -376,6 +375,8 @@ MonoBehaviour:
   Accellaration: 30
   move: {x: 0, y: 0}
   crawler: 0
+  canWalk: 1
+  beingRepelled: 0
   turnSmoothTime: 0.1
   PlayerAnimator: {fileID: 0}
   timeToRunFromWalkSeconds: 2
@@ -417,25 +418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce2342e103bd344a9a7cef4920c987c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5601191856497944116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495390138495074142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2c193e2fc95464c9e6d4f8a99acf7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpHeight: 0.2
-  isGrounded: 0
-  NumberJumps: 0
-  MaxJumps: 2
-  ExampleObject: {fileID: 0}
-  PlayerAnimator: {fileID: 0}
-  originalConstraints: 0
 --- !u!135 &2314490878233143798
 SphereCollider:
   m_ObjectHideFlags: 0
