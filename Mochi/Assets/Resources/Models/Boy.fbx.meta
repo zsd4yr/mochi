@@ -8,7 +8,7 @@ ModelImporter:
     second: idle
   - first:
       74: 6291758564428842403
-    second: crawl
+    second: crawling
   - first:
       74: -5497966255740390507
     second: happyWalk
@@ -30,6 +30,15 @@ ModelImporter:
   - first:
       74: 4422654885038932220
     second: sitting
+  - first:
+      74: -3579208771848967941
+    second: Crawl
+  - first:
+      74: -7332522026633846041
+    second: crawling
+  - first:
+      74: -7332522026633846041
+    second: crawl
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -99,7 +108,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -140,30 +149,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: NewEvent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.3172691
-        functionName: PlayFootsteps
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: fce2342e103bd344a9a7cef4920c987c,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.7674526
-        functionName: PlayFootsteps
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: fce2342e103bd344a9a7cef4920c987c,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -288,7 +274,7 @@ ModelImporter:
       name: run
       takeName: Armature.007|run
       internalID: 0
-      firstFrame: 0
+      firstFrame: 10.4
       lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0

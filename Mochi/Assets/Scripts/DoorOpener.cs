@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class DoorOpener : MonoBehaviour
 {
@@ -9,9 +11,10 @@ public class DoorOpener : MonoBehaviour
     public Animator animator;
 
     public bool openTrigger = false;
-
     public bool closeTrigger = false;
-    public bool isPressurePlate;
+
+    public bool isSingleUse;
+    public string EnteredName = "Robot";
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +25,9 @@ public class DoorOpener : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Robot"))
+        if (other.CompareTag(EnteredName) || other.CompareTag(EnteredName))
         {
-            if(openTrigger)
+            if (openTrigger)
             {
                 animator.SetBool("isOpening", true);
             }
@@ -32,16 +35,36 @@ public class DoorOpener : MonoBehaviour
             {
                 animator.SetBool("isOpening", false);
             }
+            if(isSingleUse)
+                GetComponent<Collider>().enabled = false;
+
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(isPressurePlate)
+        if (!isSingleUse && (other.CompareTag(EnteredName) || other.CompareTag(EnteredName)))
         {
             animator.SetBool("isOpening", false);
+            //this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled = true;
         }
     }
 
-
+    void Update()
+    {
+        if (Keyboard.current.tKey.wasPressedThisFrame)
+        {
+            if (EnteredName == "Robot")
+            {
+                EnteredName = "Player";
+                print("now player opens");
+            }
+            else
+            {
+                EnteredName = "Robot";
+                print("now robot opens");
+            }
+        }
+        //toggles with "t"
+    }
 }

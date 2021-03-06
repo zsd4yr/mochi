@@ -185,7 +185,7 @@ ModelImporter:
       name: Button Press
       takeName: Armature|Idle.002
       internalID: 0
-      firstFrame: 0
+      firstFrame: 11
       lastFrame: 41
       wrapMode: 0
       orientationOffsetY: 0

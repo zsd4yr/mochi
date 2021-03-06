@@ -462,3 +462,5 @@ fmod_editor.log
 # FMOD 1.10.x (Legacy)
 /Assets/FMODAssets/*
 /Assets/FMODStudioCache.meta
+Mochi/Assets/Ludiq.Generated.meta
+Mochi/Assets/Ludiq.meta

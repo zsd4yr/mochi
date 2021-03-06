@@ -21,11 +21,11 @@ TagManager:
   - 
   - Mask
   - Opaque
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Robot
+  - Environment
+  - Interactible
+  - Hazard
   - 
   - 
   - 

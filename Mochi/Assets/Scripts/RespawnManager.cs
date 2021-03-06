@@ -49,6 +49,11 @@ public class RespawnManager : MonoBehaviour
         Robot.transform.position = CurrentRespawnPlatform.transform.position;
     }
 
+    public Transform GetRespawnPlatform()
+    {
+        return CurrentRespawnPlatform.transform;
+    }
+
     public void SwitchCurrentPlatformTo(GameObject newCurrentPlat)
     {
         this.CurrentRespawnPlatform = newCurrentPlat;

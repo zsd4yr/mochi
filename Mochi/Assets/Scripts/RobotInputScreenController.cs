@@ -14,6 +14,7 @@ public class RobotInputScreenController : MonoBehaviour
     public Button UpButton;
     public Button ExecuteButton;
     public Button ActionButton;
+    public Button WaitButton;
     public Button RespawnButton;
 
     public TextMeshProUGUI InputFeedbackDisplay;
@@ -43,6 +44,7 @@ public class RobotInputScreenController : MonoBehaviour
         Debug.Assert(this.UpButton != null, $"{nameof(this.UpButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
         Debug.Assert(this.ExecuteButton != null, $"{nameof(this.ExecuteButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
         Debug.Assert(this.ActionButton != null, $"{nameof(this.ActionButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
+        //Debug.Assert(this.WaitButton != null, $"{nameof(this.WaitButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
         Debug.Assert(this.RespawnButton != null, $"{nameof(this.RespawnButton)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
         Debug.Assert(this.InputFeedbackDisplay != null, $"{nameof(this.InputFeedbackDisplay)} cannot be null upon start. Please hook it up to {this.gameObject.name}");
 
@@ -69,6 +71,8 @@ public class RobotInputScreenController : MonoBehaviour
 
     public void OnExecuteButtonClicked()
     {
+
+        RobotController.Agent.isStopped = false;
         this.RobotController.OnExecuteQueue();
 
         this.FeedbackLines = new List<string>();
@@ -86,6 +90,12 @@ public class RobotInputScreenController : MonoBehaviour
     public void OnRespawnButtonClicked()
     {
         this.RespawnManager.RespawnRobot();
+        //RobotController.Agent.SetDestination(RespawnManager.GetRespawnPlatform().position);
+        RobotController.Agent.Warp(RespawnManager.GetRespawnPlatform().position);
+        RobotController.Agent.ResetPath();
+        RobotController.OnDestroyQueue();
+        RobotController.Agent.isStopped = true;
+        //note: set requested position to the respawn position
     }
 
     private void OnDirectionButtonClicked(Vector3 direction, string newText)
@@ -95,7 +105,17 @@ public class RobotInputScreenController : MonoBehaviour
         this.UpdateFeedbackText(newText);
 
         this.RobotController.EnqueueCommand(new RobotMoveCommand(newPosition));
+        //this.RobotController.PlaceMarkerAtSpot(newPosition);
+        //note spawn at center and figure out amt of Unity squares. +direction amt + direction amt units you're going. 
     }
+    
+    //private void OnWaitButtonClicked(string newText)
+    //{
+    //    this.UpdateFeedbackText(newText);
+
+    //    this.RobotController.EnqueueCommand(new RobotMoveCommand(newPosition));
+    //    //note spawn at center and figure out amt of Unity squares. +direction amt + direction amt units you're going. 
+    //}
 
     private void UpdateFeedbackText(string newText)
     {

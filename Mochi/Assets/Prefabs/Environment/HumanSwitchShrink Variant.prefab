@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &597841604304498457
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1663898016, guid: 1d885f75ffbe52345abd90bfdcb4745e, type: 3}
+      propertyPath: m_SwitchType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663898016, guid: 1d885f75ffbe52345abd90bfdcb4745e, type: 3}
+      propertyPath: m_ShrinkSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663898016, guid: 1d885f75ffbe52345abd90bfdcb4745e, type: 3}
+      propertyPath: m_DoorAnimator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663898016, guid: 1d885f75ffbe52345abd90bfdcb4745e, type: 3}
+      propertyPath: m_DoorCollider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663898016, guid: 1d885f75ffbe52345abd90bfdcb4745e, type: 3}
+      propertyPath: m_ShrinkObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70117974
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70093507
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0922797
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.09231189
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -15.000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403678768484470028, guid: 1d885f75ffbe52345abd90bfdcb4745e,
+        type: 3}
+      propertyPath: m_Name
+      value: HumanSwitchShrink
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d885f75ffbe52345abd90bfdcb4745e, type: 3}

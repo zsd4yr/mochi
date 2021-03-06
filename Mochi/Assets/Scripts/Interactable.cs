@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class Interactable : MonoBehaviour
 {
     GameControls controls;
-
+    RespawnManager m_RespawnManager;
     //public Camera cam;
     [ShowOnly]
     public GameObject RobotGO;
@@ -60,6 +60,8 @@ public class Interactable : MonoBehaviour
 
     private bool isEkeyPressed = false;
 
+    //Respawner number. -1 or less means it won't be called or detected.
+    public GameObject MyRespawnObject;
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -101,6 +103,9 @@ public class Interactable : MonoBehaviour
 
     private void Awake()
     {
+        m_RespawnManager = FindObjectOfType<RespawnManager>().GetComponent<RespawnManager>();
+        if (m_RespawnManager == null)
+            Debug.LogError("Respawn Manager not properly found or assigned");
         controls = new GameControls();
         controls.GameController.Interact.performed += ctx => wasEkeyPressedThisFrame();
     }
@@ -144,6 +149,7 @@ public class Interactable : MonoBehaviour
             Debug.Log("I have been interacted with!");
             this.RobotInputScreen.enabled = true;
             CameraController.Instance().ShowTopDownView();
+            m_RespawnManager.SwitchCurrentPlatformTo(MyRespawnObject);
             isEkeyPressed = false;
         }
     }
