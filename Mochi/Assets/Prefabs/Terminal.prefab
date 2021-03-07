@@ -145,6 +145,7 @@ MonoBehaviour:
   MaximumCircleSize: 0.2
   DesiredCurrentTransparency: 0
   DesiredCurrentCircleSize: 0
+  MyRespawnObject: {fileID: 0}
 --- !u!136 &269269775
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7753a3e10f59af84ba106c7260f69fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxEvent: event:/SFX/UI/Terminal_On
+  sfxEvent: event:/SFX/UI/Terminal_On2
 --- !u!1001 &5562431188422480811
 PrefabInstance:
   m_ObjectHideFlags: 0
