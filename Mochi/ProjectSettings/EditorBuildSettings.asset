@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Audrey/AudreyScene.unity
     guid: 20e72c9711aa5e44e9777da210716a34
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Zach/Zach_Super_Secret_Scene/Zach_Super_Secret.unity
     guid: 3f4b4eb2a45de7c49aedd2b01b5cb9b7
+  - enabled: 1
+    path: Assets/Scenes/Greg/GregScene/GregScene2.unity
+    guid: 7b0b0447c826b9446849521e3e06badd
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 603ede562b87a814e8f4f29eb06694fb,
       type: 2}

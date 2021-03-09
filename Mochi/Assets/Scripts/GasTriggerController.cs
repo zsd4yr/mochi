@@ -18,7 +18,8 @@ public class GasTriggerController : MonoBehaviour
             isWithinBounds = true;
             collider = other;
             player = other.gameObject.GetComponent<PlayerController>();
-            player.beingRepelled = true;
+            //player.beingRepelled = true;
+            player.AddToExternalInfluenceForce(player.ExternalForce);
             //player.canWalk = false;
             lastEntryPosition = collider.gameObject.transform.position;
             //if (player.Accellaration > 0)
@@ -32,7 +33,8 @@ public class GasTriggerController : MonoBehaviour
         if (other.CompareTag(PlayerController.PlayerTag))
         {
             isWithinBounds = false;
-            player.beingRepelled = false;
+            //player.beingRepelled = false;
+            player.AddToExternalInfluenceForce(Vector3.zero);
 
             collider = null;
             //player.Accellaration *= -1;

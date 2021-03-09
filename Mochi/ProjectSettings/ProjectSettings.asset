@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Mochi
+  productName: Ritsu&Mochi
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -68,7 +68,7 @@ PlayerSettings:
   androidBlitType: 1
   defaultIsNativeResolution: 0
   macRetinaSupport: 1
-  runInBackground: 1
+  runInBackground: 0
   captureSingleScreen: 0
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
@@ -598,8 +598,8 @@ PlayerSettings:
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
-  additionalIl2CppArgs: --additional-cpp="D:/mochi/Mochi/Assets/../Temp/fmod_register_static_plugins.cpp"
-    --additional-cpp="D:/mochi/Mochi/Assets/Plugins/FMOD/src/Runtime/fmod_static_plugin_support.h"
+  additionalIl2CppArgs: --additional-cpp="D:/Unity Projects/mochi2/Mochi/Assets/../Temp/fmod_register_static_plugins.cpp"
+    --additional-cpp="D:/Unity Projects/mochi2/Mochi/Assets/Plugins/FMOD/src/Runtime/fmod_static_plugin_support.h"
   scriptingRuntimeVersion: 1
   gcIncremental: 0
   assemblyVersionValidation: 1

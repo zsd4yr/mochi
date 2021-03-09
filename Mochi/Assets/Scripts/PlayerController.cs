@@ -6,9 +6,10 @@ public class PlayerController : MonoBehaviour
     public GameObject visual;
     Rigidbody Rigidbody;
     GameControls controls;
-    public float Accellaration = 100f;
+    public float Acceleration = 100f;
     public Vector2 move;
-    private Vector3 prevPos;
+    public Vector3 ExternalForce = new Vector3(5f, 0, 5f);
+    private Vector3 prevPos, newPos, ExternalInfluence;
     public bool crawler = false,
                 canWalk = true,
                 beingRepelled = false;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody>();
         controls = new GameControls();
+        ExternalInfluence = Vector3.zero;
     }
 
     private void OnEnable()
@@ -91,8 +93,11 @@ public class PlayerController : MonoBehaviour
                 }*/
             }
 
+           
             this.prevPos = this.transform.position;
         }
+
+
     }
 
     void FixedUpdate()
@@ -103,22 +108,24 @@ public class PlayerController : MonoBehaviour
             controls.GameController.Movement.canceled += ctx => move = Vector2.zero;
 
             Vector3 movement = new Vector3(move.x, 0, move.y);
-            Vector3 movementNomral = new Vector3(move.x, 0, move.y).normalized;
+            Vector3 movementNormal = new Vector3(move.x, 0, move.y).normalized;
             if (this.timeSinceStartedWalking >= this.timeToRunFromWalkSeconds)
             {
-                Rigidbody.AddForce(movement * (Accellaration * 1.5f));
+                Rigidbody.AddForce((movement * (Acceleration * 1.5f)) + ExternalInfluence);
             }
             else
             {
-                Rigidbody.AddForce(movement * Accellaration);
+                Rigidbody.AddForce((movement * Acceleration) + ExternalInfluence);
             }
             if(beingRepelled)
-                Rigidbody.AddForce(movement * (-Accellaration * 2f));
-
+                Rigidbody.AddForce(movement * (-Acceleration * 2f));
         }
         //If not jumping, then move.
     }
-
+    public void AddToExternalInfluenceForce(Vector3 _externalForce)
+    {
+        ExternalInfluence = _externalForce;
+    }
     private void LateUpdate()
     {
         if (/*canWalk &&*/ Rigidbody.velocity.magnitude > 0.1f)
