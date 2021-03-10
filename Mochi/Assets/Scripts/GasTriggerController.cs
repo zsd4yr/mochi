@@ -25,7 +25,6 @@ public class GasTriggerController : MonoBehaviour
             //if (player.Accellaration > 0)
             //    player.Accellaration *= -1;
         }
-
     }
 
     private void OnTriggerExit(Collider other)
