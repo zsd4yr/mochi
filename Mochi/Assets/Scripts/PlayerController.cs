@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float Acceleration = 100f;
     public Vector2 move;
     public Vector3 ExternalForce = new Vector3(5f, 0, 5f);
-    private Vector3 prevPos, newPos, ExternalInfluence;
+    private Vector3 prevPos, newPos, ExternalInfluence, moveAngle;
     public bool crawler = false,
                 canWalk = true,
                 beingRepelled = false;   
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     [ShowOnly]
     public Animator PlayerAnimator;
 
-    public float timeToRunFromWalkSeconds;
+    public float timeToRunFromWalkSeconds, visualTargetAngle, visualAngle;
 
     private float timeSinceStartedWalking;
     public const string isWalking = nameof(isWalking);
@@ -76,50 +76,42 @@ public class PlayerController : MonoBehaviour
             controls.GameController.Movement.canceled += ctx => move = Vector2.zero;
         }
 
-
-        if (/*canWalk &&*/ this.PlayerAnimator.GetBool(isJumping) == false)
+        if (this.Rigidbody.velocity.magnitude >= 0.01)
         {
-            if (this.Rigidbody.velocity.magnitude >= 0.01)
-            {
-                this.timeSinceStartedWalking += Time.deltaTime;
-                if (this.PlayerAnimator.GetBool(Crawling) == false)
-                {
+            this.timeSinceStartedWalking += Time.deltaTime;
+            //if (this.PlayerAnimator.GetBool(Crawling) == false)
+            //{
                     
-                    if (this.timeSinceStartedWalking >= this.timeToRunFromWalkSeconds)
-                    {
-                        this.PlayerAnimator.SetBool(isWalking, false);
-                        this.PlayerAnimator.SetBool(isRunning, true);
-                    }
-                    else
-                    {
-                        this.PlayerAnimator.SetBool(isWalking, true);
-                        this.PlayerAnimator.SetBool(isRunning, false);
-                    }
-                }                
-                else 
+                if (this.timeSinceStartedWalking >= this.timeToRunFromWalkSeconds)
                 {
-                    //this.PlayerAnimator.SetBool(Crawling, false);
-                    this.PlayerAnimator.SetBool(isCrawling, true);
+                    this.PlayerAnimator.SetBool(isWalking, false);
+                    this.PlayerAnimator.SetBool(isRunning, true);
                 }
-            }
-           
-            else
-            {
-                this.timeSinceStartedWalking = 0.0f;
-                this.PlayerAnimator.SetBool(isWalking, false);
-                this.PlayerAnimator.SetBool(isRunning, false);
-                this.PlayerAnimator.SetBool(isCrawling, false);
-                /*if (crawler)
+                else
                 {
-                    this.PlayerAnimator.SetBool(Crawling, true);
-                }*/
-            }
-
-           
-            this.prevPos = this.transform.position;
+                    this.PlayerAnimator.SetBool(isWalking, true);
+                    this.PlayerAnimator.SetBool(isRunning, false);
+                }
+            //}                
+            //else 
+            //{
+                //this.PlayerAnimator.SetBool(Crawling, false);
+                //this.PlayerAnimator.SetBool(isCrawling, true);
+            //}
+        }           
+        else
+        {
+            this.timeSinceStartedWalking = 0.0f;
+            this.PlayerAnimator.SetBool(isWalking, false);
+            this.PlayerAnimator.SetBool(isRunning, false);
+            this.PlayerAnimator.SetBool(isCrawling, false);
+            /*if (crawler)
+            {
+                this.PlayerAnimator.SetBool(Crawling, true);
+            }*/
         }
-
-
+           
+        this.prevPos = this.transform.position;
     }
 
     void FixedUpdate()
@@ -132,7 +124,7 @@ public class PlayerController : MonoBehaviour
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-
+                moveAngle = moveDir;
                 if (this.timeSinceStartedWalking >= this.timeToRunFromWalkSeconds)
                 {
                     Rigidbody.AddForce((moveDir.normalized * (Acceleration * 1.5f)) + ExternalInfluence);
@@ -143,6 +135,8 @@ public class PlayerController : MonoBehaviour
                 }
                 if (beingRepelled)
                     Rigidbody.AddForce(moveDir.normalized * (-Acceleration * 2f));
+
+                visual.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
             }
         }
         else if (/*canWalk &&*/ this.PlayerAnimator.GetBool(isJumping) == false)
@@ -165,6 +159,7 @@ public class PlayerController : MonoBehaviour
         }
         //If not jumping, then move.
     }
+
     public void AddToExternalInfluenceForce(Vector3 _externalForce)
     {
         ExternalInfluence = _externalForce;
