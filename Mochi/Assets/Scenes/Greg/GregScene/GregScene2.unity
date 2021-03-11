@@ -2369,6 +2369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AmbientMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 5601986436303370497, guid: b32931d928c9e4c458ec53c7e2a77fed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b32931d928c9e4c458ec53c7e2a77fed, type: 3}
 --- !u!1 &921543491 stripped
@@ -2395,6 +2400,25 @@ MonoBehaviour:
   closeTrigger: 0
   isSingleUse: 0
   EnteredName: Robot
+--- !u!1 &924188513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8992433776308871408, guid: 054f874b873882640b5488aa48f32347,
+    type: 3}
+  m_PrefabInstance: {fileID: 87010111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &924188522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924188513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205af2ade2850bf44abb6cd5e625580f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxEvent: event:/SFX/Objects/Floor_Switch3
 --- !u!1001 &936668528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2402,6 +2426,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3534196832976445130, guid: f7e124d2153414d4399f4a66b39f29e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534196832976445130, guid: f7e124d2153414d4399f4a66b39f29e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534196832976445130, guid: f7e124d2153414d4399f4a66b39f29e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 7753a3e10f59af84ba106c7260f69fa4,
+        type: 3}
+    - target: {fileID: 3534196832976445130, guid: f7e124d2153414d4399f4a66b39f29e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534196832976445130, guid: f7e124d2153414d4399f4a66b39f29e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534196832976445130, guid: f7e124d2153414d4399f4a66b39f29e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: PlaySFX_UIInput()
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534196832976445130, guid: f7e124d2153414d4399f4a66b39f29e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7296642468778965286, guid: f7e124d2153414d4399f4a66b39f29e4,
         type: 3}
       propertyPath: m_Name

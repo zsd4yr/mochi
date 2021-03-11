@@ -6,6 +6,8 @@ using FMOD.Studio;
 
 public class MusicManager : MonoBehaviour
 {
+    public bool[] levelCompleted = new bool[5] { false, false, false, false, false}; 
+
     public string musicEvent;
 
     EventInstance music;
