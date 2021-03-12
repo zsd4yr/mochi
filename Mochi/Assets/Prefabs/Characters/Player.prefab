@@ -371,12 +371,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d06817cc2566b449ba29158ec72254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInputSpace: {fileID: 0}
   visual: {fileID: 8495390138872900090}
-  Accellaration: 30
+  Acceleration: 100
   move: {x: 0, y: 0}
+  ExternalForce: {x: 5, y: 0, z: 5}
   crawler: 0
   canWalk: 1
   beingRepelled: 0
+  myCamera: {fileID: 0}
   turnSmoothTime: 0.1
   PlayerAnimator: {fileID: 0}
   timeToRunFromWalkSeconds: 2
@@ -881,7 +884,7 @@ Animator:
   m_GameObject: {fileID: 8495390138872900090}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5577219b917cf7c439011c7bfdedb12c, type: 2}
+  m_Controller: {fileID: 9100000, guid: e01b99f776485fb438b29e2ee4834b2d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
