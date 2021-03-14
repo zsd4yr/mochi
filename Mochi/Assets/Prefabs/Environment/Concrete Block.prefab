@@ -16,8 +16,8 @@ GameObject:
   m_Name: Concrete Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7843464741676458639
 Transform:
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4227459415849878274}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -7.488062, y: 0.8649709, z: -0.07122712}
-  m_LocalScale: {x: 59.13149, y: 59.13149, z: 59.13149}
+  m_LocalScale: {x: 59.131474, y: 59.13148, z: 59.13148}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
