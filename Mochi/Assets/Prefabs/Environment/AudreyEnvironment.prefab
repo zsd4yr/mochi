@@ -2433,7 +2433,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   openTrigger: 0
   closeTrigger: 0
-  isSingleUse: 0
+  isSingleUse: 1
   EnteredName: Robot
   m_SwitchType: 0
   m_ShrinkObject: {fileID: 3023352511886096642}
