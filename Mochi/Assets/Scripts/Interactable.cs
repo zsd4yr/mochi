@@ -146,7 +146,7 @@ public class Interactable : MonoBehaviour
         //if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
         if (isWithinBounds && (isEkeyPressed || Keyboard.current.eKey.wasPressedThisFrame))
         {
-            Debug.Log("I have been interacted with!");
+            //Debug.Log("I have been interacted with!");
             this.RobotInputScreen.enabled = true;
             CameraController.Instance().ShowTopDownView();
             m_RespawnManager.SwitchCurrentPlatformTo(MyRespawnObject);

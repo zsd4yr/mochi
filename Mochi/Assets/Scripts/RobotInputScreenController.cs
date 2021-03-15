@@ -104,6 +104,7 @@ public class RobotInputScreenController : MonoBehaviour
 
         this.UpdateFeedbackText(newText);
 
+        //Debug.Log("New Position Added: " + newPosition);
         this.RobotController.EnqueueCommand(new RobotMoveCommand(newPosition));
         //this.RobotController.PlaceMarkerAtSpot(newPosition);
         //note spawn at center and figure out amt of Unity squares. +direction amt + direction amt units you're going. 
