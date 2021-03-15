@@ -12,6 +12,7 @@ public class RobotMoveCommand : IRobotCommand
         var rectifiedWorldVector = new Vector3(world.x, 0, world.z);
         WorldPosition = rectifiedWorldVector;
         this.WorldPositionWithinNavMesh = SentinelUnsetVector;
+        //Debug.Log("New world position queued: " + WorldPosition);
     }
 
     

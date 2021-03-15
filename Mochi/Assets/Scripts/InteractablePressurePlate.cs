@@ -65,7 +65,7 @@ public class InteractablePressurePlate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (isSingleUse && (other.CompareTag(EnteredName) || other.CompareTag(EnteredName)) )
+        if (!isSingleUse && (other.CompareTag(EnteredName) || other.CompareTag(EnteredName)) )
         {
             animator.SetBool("isOpening", false);
             this.transform.parent.gameObject.GetComponent<BoxCollider>().enabled = true;

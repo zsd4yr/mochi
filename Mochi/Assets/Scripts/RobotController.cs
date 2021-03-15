@@ -13,12 +13,12 @@ public class RobotController : MonoBehaviour
 
     public float DirectionMagnitude;
     public GameObject DestinationMarkerPrefab;
+    //[ShowOnly]
+    public Queue<IRobotCommand> Commands;
     
     [ShowOnly]
     public NavMeshAgent Agent;
 
-    //[ShowOnly]
-    public Queue<IRobotCommand> Commands;
     //[SerializeField]
 
     void Start()
@@ -75,6 +75,7 @@ public class RobotController : MonoBehaviour
                 case RobotMoveAbsoluteCommand robotMoveAbsoluteCommand:
                     if (IsAtDestination(Agent.transform.position, robotMoveAbsoluteCommand.WorldPositionWithinNavMesh))
                     {
+                        Debug.Log("I am at: " + robotMoveAbsoluteCommand.WorldPositionWithinNavMesh + ". Dequeuing!"); 
                         this.Commands.Dequeue();
                     }
                     else
@@ -85,6 +86,7 @@ public class RobotController : MonoBehaviour
                         {
                             this.Agent.SetDestination(robotMoveAbsoluteCommand.WorldPositionWithinNavMesh);
                             //PlaceMarkerAtSpot(this.Agent.destination);
+                            //Debug.Log("Destination is now at: " + robotMoveAbsoluteCommand.WorldPositionWithinNavMesh );
 
                         }
                         else
@@ -92,13 +94,17 @@ public class RobotController : MonoBehaviour
                             this.Agent.SetDestination(robotMoveAbsoluteCommand.WorldPosition);
                             robotMoveAbsoluteCommand.SetWorldPositionWithinNavMesh(this.Agent.destination);
                             //PlaceMarkerAtSpot(this.Agent.destination);
-
+                            //Debug.Log("Destination is now at: " + robotMoveAbsoluteCommand.WorldPositionWithinNavMesh);
                         }
 
                         if (this.Agent.destination != previousDestination)
                         {
                             Debug.Log($"Setting new Robot destination to {robotMoveAbsoluteCommand.WorldPositionWithinNavMesh}");
                             //PlaceMarkerAtSpot(this.Agent.destination);
+                        }
+                        else
+                        {
+                            Debug.LogError($"Oops! I'm at the previous destination {previousDestination}");
                         }
                         //if (this.Agent.destination != previousDestination)
                         //    PlaceMarkerAtSpot(this.Agent.destination);
@@ -108,7 +114,7 @@ public class RobotController : MonoBehaviour
                 case RobotMoveCommand robotMoveCommand:
                     if (IsAtDestination(Agent.transform.position, robotMoveCommand.WorldPositionWithinNavMesh))
                     {
-                        this.Commands.Dequeue();
+                        Debug.Log("I am at: " + robotMoveCommand.WorldPositionWithinNavMesh + ". Dequeuing!"); this.Commands.Dequeue();
                     }
                     else
                     {
@@ -124,6 +130,7 @@ public class RobotController : MonoBehaviour
                         {
                             // modify the desired movement vector by the current position
                             var robotMoveTarget = robotMoveCommand.WorldPosition + this.gameObject.transform.position;
+                            Debug.Log("Robot Move Target: " + robotMoveTarget);
                             this.Agent.SetDestination(robotMoveTarget);
                             robotMoveCommand.SetWorldPositionWithinNavMesh(this.Agent.destination);
                             //PlaceMarkerAtSpot(this.Agent.destination);
@@ -134,7 +141,10 @@ public class RobotController : MonoBehaviour
                             Debug.Log($"Setting new Robot destination to {robotMoveCommand.WorldPositionWithinNavMesh}");
                             //PlaceMarkerAtSpot(this.Agent.destination);
                         }
-                        
+                        else
+                        {
+                            Debug.LogError($"Oops! I'm at the previous destination {previousDestination}");
+                        }
                         yield return null;
                     }
                     break;
