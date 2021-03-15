@@ -124,13 +124,14 @@ public class RobotController : MonoBehaviour
                         {
                             this.Agent.SetDestination(robotMoveCommand.WorldPositionWithinNavMesh);
                             //PlaceMarkerAtSpot(this.Agent.destination);
+                            Debug.Log("Agent WorldPosition in NavMesh is set at: " + robotMoveCommand.WorldPositionWithinNavMesh);
 
                         }
                         else
                         {
                             // modify the desired movement vector by the current position
                             var robotMoveTarget = robotMoveCommand.WorldPosition + this.gameObject.transform.position;
-                            Debug.Log("Robot Move Target: " + robotMoveTarget);
+                            Debug.Log("Agent WorldPosition in NavMesh NOT set for Target: " + robotMoveTarget);
                             this.Agent.SetDestination(robotMoveTarget);
                             robotMoveCommand.SetWorldPositionWithinNavMesh(this.Agent.destination);
                             //PlaceMarkerAtSpot(this.Agent.destination);
