@@ -18,7 +18,7 @@ public class FootstepsSFX : MonoBehaviour
 
     void PlayFootsteps()
     {
-        footsteps = RuntimeManager.CreateInstance("event:/SFX/Human/Human_walk");
+        footsteps = RuntimeManager.CreateInstance("event:/SFX/Human/Human_walk2");
         footsteps.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
         footsteps.start();
         footsteps.release();
