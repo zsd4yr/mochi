@@ -26,7 +26,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX_UIInput()
     {
-        RuntimeManager.PlayOneShot(UI_Key_Input);
+        //RuntimeManager.PlayOneShot(UI_Key_Input);
+        RuntimeManager.PlayOneShot(sfxEvent);
     }
 
     public void PlaySFX_UIExecute()
