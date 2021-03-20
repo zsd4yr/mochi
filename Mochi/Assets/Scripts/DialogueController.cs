@@ -84,7 +84,7 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Dialogue Resource does not contain given tag: " + DialogueTag);
+            Debug.LogError("Dialogue Resource does not contain given tag: " + DialogueTag);
         }
     }
 

@@ -71,7 +71,7 @@ public class InteractableSwitch : MonoBehaviour
     public bool m_DoorOpenTrigger = true, 
                 m_DoorCloseTrigger = false;
 
-    public bool m_CanFlip = true,
+    public bool m_CanActivate = true, 
                 m_IsShrinking = false;
 
     private void OnDrawGizmosSelected()
@@ -152,7 +152,7 @@ public class InteractableSwitch : MonoBehaviour
     void Update()
     {
         //if (Keyboard.current.eKey.wasPressedThisFrame && isWithinBounds == true)
-        if (isWithinBounds && (isEkeyPressed || Keyboard.current.eKey.wasPressedThisFrame))
+        if (m_CanActivate && isWithinBounds && (isEkeyPressed || Keyboard.current.eKey.wasPressedThisFrame))
         {
             Debug.Log("I have been interacted with!");
             if(m_SwitchType == Enumerators.SwitchType.OpenDoor && 
@@ -180,7 +180,7 @@ public class InteractableSwitch : MonoBehaviour
                 //   Destroy(m_ShrinkObject);
             }
             
-            m_CanFlip = false;
+            m_CanActivate = false;
             isEkeyPressed = false;
         }
 

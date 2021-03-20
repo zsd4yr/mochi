@@ -164,7 +164,13 @@ public class PlayerController : MonoBehaviour
     {
         ExternalInfluence = _externalForce;
     }
-
+    public void ApplyDrag(bool _applyDrag)
+    {
+        if (_applyDrag)
+            Rigidbody.drag = 25;
+        else
+            Rigidbody.drag = 10;
+    }
     Vector3 ProjectDirectionOnPlane(Vector3 direction, Vector3 normal)
     {
         return (direction - normal * Vector3.Dot(direction, normal)).normalized;

@@ -11,6 +11,7 @@ public class GasTriggerController : MonoBehaviour
     public Vector3 opposite, translateOffset;
     Vector3 lastEntryPosition;
     public float oppositeMultiplier;
+    InteractableSwitch interactableSwitch;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(PlayerController.PlayerTag))
@@ -20,10 +21,17 @@ public class GasTriggerController : MonoBehaviour
             player = other.gameObject.GetComponent<PlayerController>();
             //player.beingRepelled = true;
             player.AddToExternalInfluenceForce(player.ExternalForce);
+            player.ApplyDrag(true);
             //player.canWalk = false;
             lastEntryPosition = collider.gameObject.transform.position;
             //if (player.Accellaration > 0)
             //    player.Accellaration *= -1;
+        }
+        else if(other.gameObject.GetComponent<InteractableSwitch>() != null)
+        {
+            interactableSwitch = other.gameObject.GetComponent<InteractableSwitch>();
+            if (interactableSwitch.m_CanActivate)
+                interactableSwitch.m_CanActivate = false;
         }
     }
 
@@ -34,11 +42,18 @@ public class GasTriggerController : MonoBehaviour
             isWithinBounds = false;
             //player.beingRepelled = false;
             player.AddToExternalInfluenceForce(Vector3.zero);
+            player.ApplyDrag(false);
 
             collider = null;
             //player.Accellaration *= -1;
             //player.canWalk = true;
             player = null;
+        }
+        else if (other.gameObject.GetComponent<InteractableSwitch>() != null)
+        {
+            interactableSwitch = other.gameObject.GetComponent<InteractableSwitch>();
+            if (!interactableSwitch.m_CanActivate)
+                interactableSwitch.m_CanActivate = true;
         }
     }
 
