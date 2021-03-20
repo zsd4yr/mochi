@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3754792327072549649}
   - component: {fileID: 7265171045674598762}
   - component: {fileID: 4074841285732689804}
+  - component: {fileID: 7288598904955992272}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -130,6 +131,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7288598904955992272}
+        m_MethodName: PlaySFX_UIInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7288598904955992272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369450533211166960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7753a3e10f59af84ba106c7260f69fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxEvent: event:/SFX/UI/Terminal_Key_Left
 --- !u!1 &457516582052066066
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +167,7 @@ GameObject:
   - component: {fileID: 578443177191830000}
   - component: {fileID: 4075819159681373902}
   - component: {fileID: 7882778730287752912}
+  - component: {fileID: 4128663352272014641}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -260,6 +286,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4128663352272014641}
+        m_MethodName: PlaySFX_UIInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4128663352272014641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457516582052066066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7753a3e10f59af84ba106c7260f69fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxEvent: event:/SFX/UI/Terminal_Key_Right
 --- !u!1 &828481013404566397
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +437,7 @@ MonoBehaviour:
   UpButton: {fileID: 3358141670490726405}
   ExecuteButton: {fileID: 8481324448548624041}
   ActionButton: {fileID: 2192285965011881859}
+  WaitButton: {fileID: 0}
   RespawnButton: {fileID: 904752579027265259}
   InputFeedbackDisplay: {fileID: 4508018136079924484}
   Robot: {fileID: 0}
@@ -586,7 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1142,6 +1193,7 @@ GameObject:
   - component: {fileID: 8008546806752846390}
   - component: {fileID: 2136428557228531731}
   - component: {fileID: 6860750204490518327}
+  - component: {fileID: 7381205620996408492}
   m_Layer: 5
   m_Name: DownButton
   m_TagString: Untagged
@@ -1260,6 +1312,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7381205620996408492}
+        m_MethodName: PlaySFX_UIInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7381205620996408492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796218740204845459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7753a3e10f59af84ba106c7260f69fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxEvent: event:/SFX/UI/Terminal_Key_Down
 --- !u!1 &4297186559697181247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1422,7 @@ GameObject:
   - component: {fileID: 1555154763480315447}
   - component: {fileID: 1732456400291051137}
   - component: {fileID: 8481324448548624041}
+  - component: {fileID: 4805987594290527652}
   m_Layer: 5
   m_Name: ExecuteButton
   m_TagString: Untagged
@@ -1464,6 +1541,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4805987594290527652}
+        m_MethodName: PlaySFX_UIInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4805987594290527652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307699802987639088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7753a3e10f59af84ba106c7260f69fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxEvent: event:/SFX/UI/Terminal_Execute
 --- !u!1 &6456882484459133547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -239, y: 117}
+  m_AnchoredPosition: {x: 142, y: 1}
   m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1753847554745673199
@@ -1727,7 +1828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1819,7 +1920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2605241707162707297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1943,6 +2044,7 @@ GameObject:
   - component: {fileID: 7048313130111077259}
   - component: {fileID: 166965293656401161}
   - component: {fileID: 3358141670490726405}
+  - component: {fileID: 7196471866917914933}
   m_Layer: 5
   m_Name: UpButton
   m_TagString: Untagged
@@ -2061,6 +2163,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7196471866917914933}
+        m_MethodName: PlaySFX_UIInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7196471866917914933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083249283316413049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7753a3e10f59af84ba106c7260f69fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxEvent: event:/SFX/UI/Terminal_Key_Up
 --- !u!1 &7336930370305861847
 GameObject:
   m_ObjectHideFlags: 0
