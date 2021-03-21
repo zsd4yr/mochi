@@ -35,7 +35,8 @@ MonoBehaviour:
   m_DoorAnimator: {fileID: 0}
   m_DoorOpenTrigger: 0
   m_DoorCloseTrigger: 0
-  m_CanFlip: 1
+  m_CanActivate: 1
+  m_IsShrinking: 0
 --- !u!114 &1663898016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +72,8 @@ MonoBehaviour:
   m_DoorAnimator: {fileID: 0}
   m_DoorOpenTrigger: 1
   m_DoorCloseTrigger: 0
-  m_CanFlip: 1
+  m_CanActivate: 1
+  m_IsShrinking: 0
 --- !u!1001 &4689030980459266801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,8 +258,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5938021064214238191, guid: 3f244535083a7b44c97e569830dca1ac,
         type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 5938021064214238191, guid: 3f244535083a7b44c97e569830dca1ac,
+        type: 3}
       propertyPath: m_Name
-      value: HumanSwitchDoorEx
+      value: HumanSwitchDoorEx Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5938021064214238191, guid: 3f244535083a7b44c97e569830dca1ac,
         type: 3}

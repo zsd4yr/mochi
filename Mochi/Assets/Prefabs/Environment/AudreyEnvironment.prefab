@@ -2688,7 +2688,7 @@ PrefabInstance:
     - target: {fileID: 1259154669868297258, guid: 1d885f75ffbe52345abd90bfdcb4745e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1403678768484470022, guid: 1d885f75ffbe52345abd90bfdcb4745e,
         type: 3}
@@ -11309,23 +11309,33 @@ PrefabInstance:
       objectReference: {fileID: 2635354058825274230}
     - target: {fileID: 5535551469956168571, guid: d22ad4475a2247d42ae8a917054f55ce,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.790001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535551469956168571, guid: d22ad4475a2247d42ae8a917054f55ce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.509752
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535551469956168571, guid: d22ad4475a2247d42ae8a917054f55ce,
+        type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7027653
+      value: 0.079344474
       objectReference: {fileID: 0}
     - target: {fileID: 5535551469956168571, guid: d22ad4475a2247d42ae8a917054f55ce,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.70251995
+      value: -0.079316825
       objectReference: {fileID: 0}
     - target: {fileID: 5535551469956168571, guid: d22ad4475a2247d42ae8a917054f55ce,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.07931704
+      value: 0.7025201
       objectReference: {fileID: 0}
     - target: {fileID: 5535551469956168571, guid: d22ad4475a2247d42ae8a917054f55ce,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07934472
+      value: 0.7027652
       objectReference: {fileID: 0}
     - target: {fileID: 5535551469956168571, guid: d22ad4475a2247d42ae8a917054f55ce,
         type: 3}
@@ -11335,7 +11345,7 @@ PrefabInstance:
     - target: {fileID: 5535551469956168571, guid: d22ad4475a2247d42ae8a917054f55ce,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -12.883
+      value: 167.117
       objectReference: {fileID: 0}
     - target: {fileID: 5535551470839462429, guid: d22ad4475a2247d42ae8a917054f55ce,
         type: 3}

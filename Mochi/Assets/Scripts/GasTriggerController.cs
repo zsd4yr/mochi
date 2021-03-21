@@ -68,14 +68,12 @@ public class GasTriggerController : MonoBehaviour
         if (collider != null && isWithinBounds == true)
         {
             //player.transform.position = Vector3.LerpUnclamped(player.transform.position, lastEntryPosition + translateOffset, 1f);
-
-
-        //    var rigidbody = collider.GetComponent<Rigidbody>();
-        //    opposite = -rigidbody.velocity;
-        //    rigidbody.AddForce(opposite * oppositeMultiplier);
-        //    //if (rigidbody.velocity.z < Vector3.zero.z && rigidbody.velocity.x < Vector3.zero.x)
-        //    //    rigidbody.velocity = Vector3.zero;
-        //    rigidbody.drag = 10f;
+            //var rigidbody = collider.GetComponent<Rigidbody>();
+            //opposite = -rigidbody.velocity;
+            //rigidbody.AddForce(opposite * oppositeMultiplier);
+            ////if (rigidbody.velocity.z < Vector3.zero.z && rigidbody.velocity.x < Vector3.zero.x)
+            ////    rigidbody.velocity = Vector3.zero;
+            //rigidbody.drag = 10f;
         }
     }
 }

@@ -512,6 +512,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RobotInputScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1052088116262136284, guid: e6401babd0af7274d96b8bcd3bf1e380,
+        type: 3}
+      propertyPath: m_text
+      value: "Teleport near \nTerminal"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6401babd0af7274d96b8bcd3bf1e380, type: 3}
 --- !u!224 &7296642470843323009 stripped
