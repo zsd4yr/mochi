@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Greg/GregScene/GregScene2.unity
     guid: 7b0b0447c826b9446849521e3e06badd
+  - enabled: 1
+    path: Assets/Scenes/EndingAndCredits.unity
+    guid: 3f7e7f34ba85cb64d96bf9cf8b3201f9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 603ede562b87a814e8f4f29eb06694fb,
       type: 2}
